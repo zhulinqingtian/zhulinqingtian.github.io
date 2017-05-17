@@ -1,0 +1,15 @@
+.hezuo{width: 100%;height: auto;padding:100px 12.5%;text-align: center;font-family: 苹方;}
+.hezuo .pp1{font-size: 33.5px;font-weight: bold;}
+.hezuo .pp2{font-size: 18px;font-weight: bold;margin-top: 118px;}
+.hezuo .pp3{width: 40%;margin:0 auto;font-size: 18px;font-family: Georgia;margin-top: 35px;margin-bottom: 63px;
+	margin-bottom: 200px;}
+.form{width: 83.3%;margin:0 auto;height: 690px;border:1px solid #aaaaaa;padding:133px 6.7%;}
+.form .top{height: 56px;width: 100%;margin-bottom: 30px;}
+.form .top .left{height: 56px;width: 50%;text-align: center;float: left;}
+.input_name{width: 74.7%;height:56px;border:1px solid #aaaaaa;background: #fff;float: left;}
+.person_name{font-size:26px ;float: left;font-family: 苹方;margin-right: 5.6%;}
+.person_addr{width: 91.7%;height:56px;border:1px solid #aaaaaa;background: #fff;}
+.person_name1{font-size:26px ;float: left;font-family: 苹方;margin-right: 2.6%;}
+.submit{margin-top: 90px;text-align: center;}
+.submit1{text-align: center;height: 60px;width: 16.6%;background: #120808;color: #fac299;font-size: 25px;line-height: 56px;margin:0 auto;margin-top: 90px;}
+.r{float: right;}

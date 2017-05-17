@@ -1,0 +1,62 @@
+.story_content{height: 1800px;width: 100%;margin:0 auto;}
+.story_left{width: 50%;float: left;position: relative;height: 100%;}
+.story_right{width: 50%;height: 375px;float: right;}
+
+.sekuai2{width: 100%;height: 227px;background: #1e1c1a;position: absolute;left:0;top:0;margin:auto;z-index: -1;}
+.story_ul{width: 100%;height: 1800px;padding:0 12.5%;overflow: hidden;}
+.story_ul li{width: 100%;height:375px;position: relative;}
+.story_left_img{width: 67.5%;height: 100%;position: absolute;left:-17.5%;}
+.story_left_img2{width: 67.5%;height: 100%;position: absolute;right:-17.5%;}
+.story_ul li .hea_bt1{
+	height: 42px;line-height: 42px;font-size: 30px;font-style: italic;
+	font-weight: bold;margin-top: 20px;font-family: 苹方;}
+.story_ul li .hea_bt1 span{
+	line-height: 42px;font-size: 22px;margin-left: 10px;font-family: Georgia;
+	margin-top: 30px;font-weight: bold;letter-spacing: 3px;font-style: normal;
+}
+.healthy{font-size: 20px;font-size: 方正兰亭;color: #BF952E;text-align: center;line-height: 44px;letter-spacing: 3px;}
+.healthy1{margin-top: 107px;width: 100%;}
+.hea_des{font-size: 18px;font-family: 苹方;color: #858383;text-align: center;letter-spacing: 3px;line-height: 110px;}
+.hea_des2{font-size:16px;font-family: 苹方;color: #858383;text-align: center;letter-spacing: 3px;line-height: 40px;width: 81%;margin:0 auto;}
+.story_right img{width: 100%;}
+.story_left img{width: 60%;height: 338px;float: right;}
+
+
+.nn .top1 {
+    height: 18px;
+    width: 100%;
+    font-size: 10px;
+    position: relative;
+    color: #857766;
+}
+.dian {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+    left: 7.5%;
+    top: 4px;
+    margin: auto;
+}
+.nn {
+    height: 100px;
+    width: 100%;
+    padding: 46px 12.5% 0;
+}
+.nn .top1 span {
+    margin-left: 9%;
+    color: #000;
+}
+.nn .top2 {
+    height: 30px;
+    width: 100%;
+    font-size: 18px;
+    color: #857766;
+}
+.nn .top2 span {
+    height: 30px;
+    width: 100%;
+    color: #D08C1E;
+    margin-left: 8.5%;
+}

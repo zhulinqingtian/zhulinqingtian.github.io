@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>凡客图</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/fanke.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="animate.js"></script>
+    <script>
+        window.onload=function(){
+            var bannerbox=document.querySelector(".banner");
+            var pictures=document.querySelectorAll(".banner .img1");
+            var btns=document.querySelectorAll(".lun div");
+
+            var pre=document.querySelector(".jiantou-left");
+            var next=document.querySelector(".jiantou-right");
+
+            console.log(pre);
+            console.log(btns)
+            btns.forEach(function(ele,index){
+            ele.onmouseover=function(){
+                num=index;
+                for(var i=0;i<btns.length;i++){
+                    btns[i].style.background="rgba(0,0,0,0.5)";
+                    pictures[i].style.opacity=0.5;
+                    pictures[i].style.zIndex=2;
+
+                }
+                ele.style.background="#B71C20";
+                pictures[index].style.opacity=1;
+                pictures[index].style.zIndex=100;
+            }       
+            })
+
+            //自动播放
+            var num=0;
+            
+            function move(){
+
+                num++;
+
+                if(num==btns.length){
+                    num=0;
+                }
+              
+                for(var i=0;i<btns.length;i++){
+                    btns[i].style.background="#dddddd";
+                    pictures[i].style.zIndex=2;
+                    pictures[i].opacity=0.5;
+                }
+               
+                btns[num].style.background="#B71C20";
+                pictures[num].style.zIndex=100;
+                pictures[num].style.opacity=1;
+            }
+
+            var stop=setInterval(move,2000);
+            bannerbox.onmouseover=function(){
+                clearInterval(stop);//清除setInterval()
+            }
+            bannerbox.onmouseout=function(){
+                stop=setInterval(move,2000);
+            }
+
+            pre.onclick=function(){
+                if(num==0){
+                    num=btns.length;
+                }
+                num-=2;
+                move();
+            }
+            next.onclick=function(){move();}
+
+
+            //导航
+            var lis=document.querySelectorAll(".lists>li");//子选择器
+            var seconds=document.querySelectorAll(".second");
+
+            var arr=[];//保存每一个ul的高度
+
+            Array.from(seconds).forEach(function(ul,index){
+                var li=ul.querySelectorAll("li");
+                var height=li.length*30-20+"px";
+                arr.push(height);
+            })
+            Array.from(lis).forEach(function(ele,index){
+                ele.onmouseover=function(){
+                    seconds[index].style.height=arr[index];
+                }
+                ele.onmouseout=function(){
+                    seconds[index].style.height=0;
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 头部 -->
+	<div class="header">
+		<div class="header-main">
+			<div class="header-right">
+				<div class="welcome">
+					您好，欢迎光临凡客诚品
+				</div>
+				<a href=""><div class="login">
+					登陆
+				</div></a>
+				<div class="fenge">
+				    |
+				</div>
+				<a href=""><div class="reg">
+					注册
+				</div></a>
+				<a href=""><div class="order">
+					我的订单
+				</div></a>
+				<div class="laba">
+					<img src="image/notice.png" alt="">
+				</div>
+               <!--  <a href=""><div class="notice">
+                	网站公告
+                </div></a> -->
+                <div class="weixin">
+                   <img src="image/w1.jpg" alt="">
+                  <!--  <div class="swx">
+                       <img src="image/weixin.png" alt="" >
+                   </div> -->
+                </div>
+                <div class="weibo">
+                    <img src="image/w2.jpg" alt="">
+                </div>
+                
+			</div>
+		</div>
+	</div>
+
+    <!-- 搜索 -->
+    <div class="search">
+        <div class="search1">
+              <div class="cart"> 
+                    <span class="gwc">购物车</span>
+             </div>
+             <div class="sousuo">
+                    <input type="text" value="搜索" class="sswz">
+            </div>
+            <input type="text" placeholder="搜衬衫，体验与众不同" class="wenzi" >
+        </div> 
+    </div>
+  
+
+    <!-- 热门搜索 -->
+    <div class="hot-search">
+      <div class="hot-search-right">
+         <div class="text">
+            <div class="text">热门搜索：</div>
+            <div class="text">免烫衬衫</div>
+            <div class="text">羽绒服</div>
+            <div class="text" >跑步t恤</div>
+            <div class="text">休闲裤</div>
+            <div class="text">户外鞋</div>
+            <div class="text">智能温控</div>
+            <div class="text1">羊毛大衣</div>
+        </div>
+        
+    </div>
+   </div>
+
+   <!-- 导航 -->
+   <!--  <div class="daohang">
+       <div class="logo">
+           <img src="image/logo18546.png" alt="">
+       </div>
+       <div class="daohang-right">
+           <div class="daohang-text">
+               首页
+           </div>
+           <div class="daohang-text">
+               衬衫
+           </div>
+           <div class="daohang-text">
+               羽绒服
+           </div>
+           <div class="daohang-text">
+               外套
+           </div>
+           <div class="daohang-text">
+               针织衫
+           </div>
+           <div class="daohang-text">
+               水柔棉
+           </div>
+           <div class="daohang-text">
+               裤装
+           </div>
+           <div class="daohang-text">
+               鞋
+           </div>
+           <div class="daohang-text">
+               袜品            </div>
+           <div class="daohang-text-last">
+               家居配饰
+           </div>
+       </div>
+   </div> -->
+        
+    <nav>   
+        <img src="image/logo18546.png" alt="" class="dhlogo">
+        <ul class="lists">
+            <li>
+                <a href="">首页</a>
+                <ul class="second" style="display: none">
+                    <li class="top"></li>
+                    <li><a href="">得到</a></li>
+                    <li><a href="">得到</a></li>
+                    <li><a href="">得到</a></li>
+                    <li><a href="">得到</a></li>
+                </ul>
+            </li>
+            <li><a href="">羽绒服</a>
+                <ul class="second">
+                    <li class="top"></li>
+                    <li><a href="">十二星座</a></li>
+                    <li><a href="">好小猫</a></li>
+                    <li><a href="">独角仙</a></li>
+                    <li><a href="">薛继业</a></li>
+                    <li><a href="">字</a></li>
+                    <li><a href="">好小猪</a></li>
+                    <li><a href="">以系列</a></li>
+                    <li><a href="">药系列</a></li>
+                    <li><a href="">简鱼</a></li>
+                    <li><a href="">十二生肖</a></li>
+                    <li><a href="">张爱玲</a></li>
+                </ul>
+            </li>
+            <li><a href="">外套</a>
+                <ul class="second">
+                    <li class="top"></li>
+                    <li><a href="">穆旦</a></li>
+                    <li><a href="">马克尔斯</a></li>
+                    <li><a href="">休闲</a></li>
+                    <li><a href="">短袖衬衫</a></li>
+                    <li><a href="">法兰绒</a></li>
+                    <li><a href="">牛津纺</a></li>
+                    <li><a href="">青年布</a></li>
+                    <li><a href="">牛仔</a></li>
+                    <li><a href="">麻</a></li>
+                    <li><a href="">水洗棉</a></li>
+                    <li><a href="">泡泡纱</a></li>
+                </ul>
+            </li>
+            <li><a href="">针织衫</a>
+                <ul class="second">
+                    <li class="top"></li>
+                    <li><a href="">卫衣</a></li>
+                    <li><a href="">外套</a></li>
+                    <li><a href="">衬衫</a></li>
+                    <li><a href="">裤装</a></li>
+                     <li><a href="">T恤</a></li>
+                </ul>
+            </li>
+            <li><a href="">水柔棉</a>
+                <ul class="second">
+                    <li class="top"></li>
+                    <li><a href="">羽绒服</a></li>
+                    <li><a href="">大衣</a></li>
+                    <li><a href="">西服</a></li>
+                    <li><a href="">nautilus</a></li>
+                </ul>
+            </li>
+            <li><a href="">裤装</a>
+                <ul class="second">
+                    <li class="top"></li>
+                    <li><a href="">空调衫</a></li>
+                    <li><a href="">棉线衫</a></li>
+                    <li><a href="">羊毛衫</a></li>
+                    <li><a href="">羊绒衫</a></li>
+                </ul>
+            </li>
+            <li><a href="">鞋</a>
+                <ul class="second">
+                    <li class="top"></li>
+                    <li><a href="">拉链开衫</a></li>
+                    <li><a href="">长袖V领</a></li>
+                    <li><a href="">长袖圆领</a></li>
+                    <li><a href="">短袖</a></li>
+                </ul>
+            </li>
+            <li><a href=""> 袜品</a>
+                <ul class="second">
+                    <li class="top"></li>
+                    <li><a href="">商务</a></li>
+                    <li><a href="">休闲裤</a></li>
+                    <li><a href="">牛仔裤</a></li>
+                    <li><a href="">麻裤子</a></li>
+                    <li><a href="">针织裤</a></li>
+                    <li><a href="">沙滩裤</a></li>
+                </ul>
+            </li>
+            <li><a href="">家居配饰</a>
+                <ul class="second">
+                    <li class="top"></li>
+                    <li><a href="">复古跑鞋</a></li>
+                    <li><a href="">户外鞋</a></li>
+                    <li><a href="">帆布鞋</a></li>
+                    <li><a href="">皮鞋</a></li>
+                    <li><a href="">休闲鞋</a></li>
+                    <li><a href="">拖鞋</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- banner -->
+    
+    <div class="banner">
+        <img src="image/ys535.jpg" alt="" class="img1">
+        <img src="images/banner1.jpg" alt="" class="img1">
+        <img src="images/banner2.jpg" alt="" class="img1">
+        <img src="images/banner3.jpg" alt="" class="img1">
+        <img src="images/banner4.jpg" alt="" class="img1">
+        <img src="images/banner5.jpg" alt="" class="img1">
+       
+        <div class="jiantou-left iconfont">&#xe605;</div>
+        <div class="jiantou-right iconfont">&#xe77b;</div>
+         <!-- <div class="jiantou-left">&lt;</div>
+        <div class="jiantou-right">&gt;</div> -->
+        <div class="lun">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    
+
+
+<!--春季新品预售 -->
+    <div class="new-product">
+      春季新品预售
+    </div>
+
+    <div class="c-display">
+    	<div class="product"><img src="image/cjys_04.jpg" alt=""></div>
+    	<div class="product"><img src="image/cjys_05.jpg" alt=""></div>
+        <div class="product1"><img src="image/cjys_06.jpg" alt=""></div>	
+ 
+        <div class="product"><img src="image/cjys_07.jpg" alt=""></div>
+        <div class="product"><img src="image/cjys_08.jpg" alt=""></div>
+        <div class="product1"><img src="image/cjys_44.jpg" alt=""></div> 
+  
+        <div class="product"><img src="image/cjys_26.jpg" alt=""></div>
+        <div class="product"><img src="image/cjys_21.jpg" alt=""></div>
+        <div class="product1"><img src="image/cjys_25.jpg" alt=""></div> 
+  
+    
+        <div class="product"><img src="image/cjys_20.jpg" alt=""></div>
+        <div class="product"><img src="image/cjys_26.jpg" alt=""></div>
+        <div class="product1"><img src="image/cjys_27.jpg" alt=""></div> 
+   
+ 
+        <div class="product"><img src="image/cjys_31.jpg" alt=""></div>
+        <div class="product"><img src="image/cjys_33.jpg" alt=""></div>
+        <div class="product1"><img src="image/cjys_34.jpg" alt=""></div> 
+   </div>
+
+     <!-- 全场88折 -->
+     <div class="new-product" style="text-align: center">
+      韩国购，全场88折
+    </div>
+   
+<div class="chaozhi">
+     <div class="left">
+         <ul style="overflow: hidden;">
+             <li><img src="image/xx1.png" alt=""></li>
+             <ul class="beijing">
+                     <li >
+                         <p class="name">Beyond closet</p> 
+                         <p class="price" style="color: red;">六折后161.4元起</p>
+                    </li>
+             </ul>
+        </ul>
+     </div>
+     <div class="middle">
+          <ul>
+              <li><img src="image/xx2.jpg" alt="" style="height: 182px;"></li>
+              <li>
+                  <ul class="beijing1">
+                     <li >
+                         <p class="name">青年布 美式复古</p> 
+                         <p class="price" style="color: red;">充值后相当于84元</p>
+                    </li>
+                   </ul>
+              </li>
+          </ul>
+
+          <ul>
+              <li><img src="image/xx3.jpg" alt=""></li>
+              <li>
+                  <ul class="beijing1">
+                     <li >
+                         <p class="name">棉线衫 圆领套衫</p> 
+                         <p class="price" style="color: red;line-height: 70px">充值后相当于84元</p>
+                    </li>
+                   </ul>
+              </li>
+          </ul>
+     </div>
+     <div class="right">
+          <ul>
+             <li><img src="image/xx4.jpg" alt="" style="width: 287px;height: 440px"></li>
+             <ul class="beijing3">
+                     <li >
+                         <p class="name">手工双面呢西服</p> 
+                         <p class="price" style="color: red;">充值后相当于499.5元</p>
+                    </li>
+             </ul>
+        </ul>
+     </div>
+</div>
+
+<div class="hggjj"><p style="line-height: 100px;font-size: 18px; color: #9A9A9A;margin-left: 530px;">超值精选区</p></div>
+
+
+<div class="chaozhi">
+     <div class="left">
+         <ul style="overflow: hidden;">
+             <li><img src="image/x1.png" alt=""></li>
+             <ul class="beijing">
+                     <li >
+                         <p class="name">Beyond closet</p> 
+                         <p class="price" style="color: red;">六折后161.4元起</p>
+                    </li>
+             </ul>
+        </ul>
+     </div>
+     <div class="middle">
+          <ul>
+              <li><img src="image/2.jpg" alt=""></li>
+              <li>
+                  <ul class="beijing1">
+                     <li >
+                         <p class="name">Beyond closet</p> 
+                         <p class="price" style="color: red;">六折后215.4元</p>
+                    </li>
+                   </ul>
+              </li>
+          </ul>
+
+          <ul>
+              <li style="overflow: hidden;"><img src="image/003.jpg" alt=""></li>
+              <li>
+                  <ul class="beijing1">
+                     <li >
+                         <p class="name">Mag&Logan</p> 
+                         <p class="price" style="color: red;line-height: 70px">六折后551.4元</p>
+                    </li>
+                   </ul>
+              </li>
+          </ul>
+     </div>
+     <div class="right">
+          <ul>
+             <li><img src="image/x2.jpg" alt="" style="width: 287px;height: 440px"></li>
+             <ul class="beijing3">
+                     <li >
+                         <p class="name">韩国购 全场六折</p> 
+                         <p class="price" style="color: red;">六折后161.4元起</p>
+                    </li>
+             </ul>
+        </ul>
+     </div>
+</div>
+   <!--  服务 -->
+   
+<br>
+<br>
+<div class="xiabu">
+        <div class="shang3">
+            <div class="yi"><img src="images/44.png" alt="">
+            </div>
+            <div class="si"><img src="images/66.png" alt="">
+            </div>
+            <div class="er"><img src="images/45.png" alt="">
+            </div>
+            <div class="si"><img src="images/67.png" alt="">
+            </div>
+            <div class="san"><img src="images/46.png" alt="">
+            </div>
+        </div>
+        <div class="xia3">
+            <div class="gy">
+                <div class="gywm">关于凡客</div>
+                <div class="q"></div>
+                <div class="xszn">新手指南</div>
+                <div class="q"></div>
+                <div class="ps">配送范围及时间</div>
+                <div class="q"></div>
+                <div class="zffs">支付方式</div>
+                <div class="q"></div>
+                <div class="shfw">售后服务</div>
+                <div class="q"></div>
+                <div class="bzzx">帮助中心</div>
+            </div>
+        </div>
+        
+    <!-- 中下部结束 -->
+    </div>
+
+
+    <div class="juli"></div>
+    <div class="copyright">
+    	CopyRight 2007-2016 vancl.com All Rights reserved 京ICP正100557号 京公网安备11011502002400号 出版证经营许可证新出来京批字第直110138号
+    	<br>
+    	凡客诚品（北京）科技有限公司
+     </div>
+          	
+     <div class="last">
+     	<img src="images/images/8.jpg" alt="" class="pic">
+     	<img src="images/images/4.jpg" alt="" class="pic1">
+     	<img src="images/images/6.jpg" alt="" class="pic1">
+     	<img src="images/images/7.jpg" alt="" class="pic1">
+     	<img src="images/images/5.jpg" alt="" class="pic1">
+     	<img src="images/images/9.jpg" alt="" class="pic2">
+     </div>
+     <div class="back">
+        <img src="images/images/右下角_03.jpg" alt="" class="img1"> 
+        <div class="totop"></div>
+    </div>
+
+</body>
+<script>
+    var totop=document.querySelector(".totop");
+    totop.onclick=function(){
+        animate(document.body,{scrollTop:0},800);
+    }
+
+</script>
+
+<!-- 购物车 -->
+<script>
+    var cart=document.querySelector(".search1 .cart");
+    cart.onmouseover=function(){
+         backgroundPosition:" -153px -30px";
+    }
+    cart.onmouseout=function(){
+         backgroundPosition:" -153px 0px";
+    }
+</script>
+</html>

@@ -1,0 +1,8 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none; /* 去除a标签的下划线 */
+}
+a{
+	color: #808080;
+}

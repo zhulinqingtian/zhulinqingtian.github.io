@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		label{
+			    width: 70px;
+    			height: 30px;
+    			border-radius: 8px;
+    			background: #fff;
+    			text-align: center;
+    			font-size: 12px;
+    			padding: 5px 5px;
+    			line-height: 30px;
+    			margin-left: 24px;
+    			margin-right: 10px;
+		}
+		@font-face {
+  			font-family: 'iconfont';  /* project id 295351 */
+  			src: url('https://at.alicdn.com/t/font_g8sl9jdpj27f1or.eot');
+  			src: url('https://at.alicdn.com/t/font_g8sl9jdpj27f1or.eot?#iefix') format('embedded-opentype'),
+  			url('https://at.alicdn.com/t/font_g8sl9jdpj27f1or.woff') format('woff'),
+  			url('https://at.alicdn.com/t/font_g8sl9jdpj27f1or.ttf') format('truetype'),
+  			url('https://at.alicdn.com/t/font_g8sl9jdpj27f1or.svg#iconfont') format('svg');
+			}
+		canvas{
+			background:#ccc;
+			display: block;
+			margin: 0 auto;
+			background: url('canvas.jpg') center center no-repeat;
+			background-size: cover;
+		}
+		.box{
+			width: 200px;
+			height: 100%;
+			background: lightskyblue;
+			position: absolute;
+			top: 0;
+			left: 10px;
+		}
+		section{
+			height: 30px;
+		}
+		 .iconfont{				
+	 	 	font-family:"iconfont";				
+	 	 	font-size:16px;				
+	 	 	font-style:normal;			
+	 	 }		
+			input[type=button]{
+				width: 130px;height: 30px;
+				background: #0f0;
+				border: 0;
+				border-radius: 20px;
+				margin: 15px auto;
+				display: block;
+				font-size: 14px;
+				color: #fff;
+
+			}
+	</style>
+	<script src="draw.js"></script>
+</head>
+<body>
+	<canvas width="500px" height="500px"></canvas>
+<div class="box">
+	<section>
+		<label for="">选择形状</label>
+		<select name="" id="shape">
+			<option value="rect">方形</option>
+			<option value="poly">多边形</option>
+			<option value="line">直线</option>
+			<option value="circle">内切圆</option>
+			<option value="outarc">外接圆</option>
+			<option value="circlecenter">中心圆</option>
+			<option value="pen">铅笔</option>
+			<option value="eraser">橡皮擦</option>
+		</select>
+	</section>
+	<section>
+		<label for="">选择边宽</label>
+		<input type="number" value="2" step="2" min="2" max="20" id="lineWidth">
+	</section>
+	<section>
+		<label for="styles" >选择边数</label>
+		<!-- <span class="icon">&#xe645;</span> -->
+		<input type="number" min="3" max='12' value=3 id="side"> 
+	</section>
+	<section>
+		<label for="styles">选择方式</label>
+		<select name="" id="style">
+			<option value="fill">填充</option>
+			<option value="stroke">描边</option>
+		</select>
+	</section>
+	
+	<section>
+		<label for="">选择颜色</label>
+		<input type="color" id="yanse">
+	</section>
+
+	<section>
+		<input type="button" value="撤销" id="redo">
+		<input type="button" value="保存" id="save">
+		<input type="button" value="清空" id="clear">
+	</section>
+	
+</div>
+
+</body>
+<script>
+	var shape=document.querySelector("#shape");
+	var canvas=document.querySelector("canvas");
+	var cobj=canvas.getContext("2d");
+	var data=[];
+
+	var s="rect";//保存形状
+	var c="#000";
+	var w=2;
+	var st="fill";
+	var si=3;
+	var lineWidth=document.querySelector("#lineWidth");//边框
+	var side=document.querySelector("#side");    //边数
+	var color=document.querySelector("#yanse");		   //颜色
+	var style=document.querySelector("#style");
+	var redo=document.querySelector("#redo");
+	var clear=document.querySelector("#clear");
+	var save=document.querySelector("#save");
+
+	shape.onchange=function(){//内容改变并且失去焦点
+		s=this.value;
+	}
+	color.onchange=function(){
+		c=this.value;
+	}
+	lineWidth.onchange=function(){
+		w=this.value;
+
+	}
+	style.onchange=function(){
+		st=this.value;
+	}
+	side.onchange=function(){
+		si=this.value;
+	}
+
+	redo.onclick=function(){
+		if(data.length==1){
+			// return;
+		}
+		cobj.clearRect(0,0,500,500);
+		data.pop();
+		if(data.length==0){
+			return;
+		}
+		cobj.putImageData(data[data.length-1],0,0);
+	}
+
+	
+	save.onclick=function(){
+		var r=canvas.toDataURL();
+		location.assign(r);
+	}
+
+	clear.onclick=function(){
+		cobj.clearRect(0,0,500,500);
+		data=[];
+	}
+	canvas.onmousedown=function(e){
+		
+		var ox=e.offsetX;
+		var oy=e.offsetY;
+
+		var draw=new Draw(cobj,{color:c,width:w,style:st});
+		if(s=='pen'){
+			cobj.beginPath();
+			cobj.lineTo(ox, oy)
+		}
+		
+		document.onmousemove=function(e){
+			
+			var mx=e.offsetX;
+			var my=e.offsetY;
+
+			if(s!="eraser"){
+				cobj.clearRect(0,0,500,500);
+				if(data.length!=0){
+
+					cobj.putImageData(data[data.length-1],0,0);
+				}
+			}
+
+			draw[s](ox,oy,mx,my,si);
+			
+		}
+		
+		document.onmouseup=function(){
+			data.push(cobj.getImageData(0,0,500,500));
+			document.onmousemove=null;
+			document.onmouseup=null;
+		}
+	}	
+</script>
+</html>

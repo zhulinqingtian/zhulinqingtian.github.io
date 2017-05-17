@@ -1,0 +1,118 @@
+*{box-sizing: border-box;}
+.cook_details{
+	width: 75%;height: 958px;background: url('../img/details/details_bg.png') center top no-repeat;
+	background-size: cover;margin: 0 auto;
+}
+.cook_details .top{
+	width: 100%;height: 200px;padding-top: 20px;
+}
+.cook_details .top .img1{
+	width: 180px;height: 180px;float: left;
+}
+.cook_details .top .right{
+	float: left;height:180px;margin-left: 200px;text-align: center;
+}
+.cook_details .top  .right .cook_name{
+	font-size: 30px;color: #584839;line-height: 100px;width: 300px;margin-right: 0;
+}
+.cook_details .top  .right .cook_name_des{
+	font-size: 20px;color: #B3B3B3;line-height: 80px;width: 300px;
+}
+.cook_details .middle{
+	width: 100%;height: 750px;padding-top: 40px;
+}
+
+.cook_details .middle .left{
+	width: 40%;height: 100%;float: left;
+}
+.cook_details .middle .right{
+	width: 60%;height: 100%;float: right;
+}
+.cook_details .middle .left .bt1{
+	width: 100%;height: 30px;background: #191613;color: #fff;font-size: 20px;
+	padding-left:30px;line-height: 30px;text-align: left;
+}
+.cook_details .middle .left .bt2{
+	width: 100%;height: 20px;background: #191613;color: #fff;font-size: 10px;
+	padding-left:30px;line-height: 20px;text-align: left;font-family: Gabriola;
+}
+.cook_details .middle .left .list{
+	width: 90%;height: 250px;margin: 0 auto;margin-top: 20px;
+}
+.cook_details .middle .left .list li{
+	font-family: 苹方;font-size: 20px;color: #AEAEAE;
+	border-bottom: 1px solid  #AEAEAE;height: 50px;line-height: 50px; 
+}
+.cook_details .middle .left .list span{
+	float: right;margin-right: 10px;
+}
+.cook_details .middle .left .bottom{
+	width: 90%;margin: 0 auto;height: 170px;margin-top: 90px;margin-left: 5%;
+}
+.cook_details .middle .left .bottom2{
+	width: 90%;margin: 0 auto;height: 100px;margin-top: 10px;margin-left: 5%;
+	display: flex;
+}
+.cook_details .middle .left .bottom2 li{
+	justify-content: space-between;width: 30%;margin-right: 18px;
+	padding: 5px;height: 100%;
+}
+.cook_details .middle .left .bottom2 li:nth-child(3){
+	margin-right: 0;
+}
+.cook_details .middle .left .bottom2 li .icon{
+	width: 60px;height: 60px;margin: 0 auto;
+}
+.cook_details .middle .left .bottom2 li .wenzi{
+	width: 100%;height: 16px;text-align: center;
+	font-size: 10px;color: #AEAEAE;line-height: 16px;
+}
+*{margin:0;padding:0;}
+.cook_details .middle .right .top{
+	width: 100%;padding:0 20px 0;height: 50px;border-bottom: 1px solid   #AEAEAE;
+	margin-top: 50px;font-size: 20px;
+}
+.cook_details .middle .right .top .wenzi1{
+	float: left;margin-left: 10px;
+}
+.cook_details .middle .right .top .wenzi2{
+	float: right;
+}
+.fangkuai{
+	width: 15px;height: 15px;background: #000;float: left;margin-top: 7px;
+}
+.cook_details .middle .right .name_jieshao{
+	height: 90px;width: 100%;line-height: 90px;font-size: 30px;color: #E92F36;
+	font-family: 华文行楷;
+}
+.xiangxi{
+	width: 100%;height: 500px;border: 1px solid #AEAEAE;overflow: hidden;
+}
+.xiangxi li{
+	width: 100%;height: 250px;
+}
+.xiangxi2{
+	width: 100%;height: 100%;
+}
+.xiangxi2 li{
+	width: 50%;height: 100%;border-right: 1px solid #AEAEAE;color: #a6a6a6;
+	float: left;
+}
+.xiangxi2 li .img2{
+	width: 100%;height: 98%;
+}
+.xiangxi2 li .gaodianname{
+	font-size: 20px;line-height: 80px;height:80px;font-style: italic;font-weight: bold;
+}
+.yingwenname{font-size: 12px;line-height: 40px;height:40px;font-family: Georgia;}
+.yingwenname2{font-size: 12px;line-height: 40px;height:40px;font-family: Georgia;margin-right: 10px;width: 100%;text-align: right;}
+.chengmingtime{
+	font-size: 18px;line-height: 30px;height: 40px;margin-top: 30px;
+}
+.buyer_pingjia{
+	display: block;display: flex;line-height: 30px;height: 40px;font-size: 18px;
+}
+.buyer_pingjia img{
+	width: 20px;height: 20px;float: left;margin-top: 5px;margin-right: 5px;
+}
+.rr{float: right;margin-right: 10px;}

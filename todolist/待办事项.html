@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>待办事项</title>
+	<style>
+		html,body{
+			margin: 0;height: 100%;font-family: 微软雅黑;
+		}
+		.title{
+			width: 100%;height: 100px;
+			background: rgba(0,0,0,0,8);
+			line-height: 100px;
+			font-size: 20px;
+			font-weight: 400;
+			padding-left: 30px;
+		}
+		*{
+			box-sizing: border-box;
+		}
+		.inputarea{
+			width: 100%;height: 50px;
+		}
+		#text{
+			width: 300px;height: 50px;float: left;
+		}
+		#submit{
+			width: 150px;height: 50px;
+			float: left;background: green;
+			border: none;
+			cursor: pointer;
+		}
+		.show{
+			width: 100%;
+			background: rgba(255,255,255,0.5);
+			flex-grow: 1;   /* 把剩余空间占满 */
+	
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			background: url('list.jpg') center center no-repeat;
+			background-size: cover;
+		}
+
+		.plan{
+			width: 50%;
+			height: 80%;
+			overflow: auto;
+			background: #369;
+			float: left;
+		}
+		.done{
+			width: 50%;
+			height: 80%;
+			float: right;
+			overflow: auto;
+			background:gray;
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		ul li input{
+			float: left;
+			width: 30px;height: 30px;
+			margin: 0;
+		}
+		ul li span{
+	
+			width: 300px;
+			height: auto;
+			border: 1px solid black;
+			line-height: 30px;
+			color: #fff;
+			padding-left: 30px;
+		}
+		ul li time{
+			width: 100px;
+			height: 30px;
+			float: right;
+			background: red;
+			text-align: center;
+			line-height: 30px;
+			color: #fff;
+			background: #f33;
+		}
+		.contenttitle{
+			width: 50%;height:20px;
+			float: left;
+			text-align: center;
+			font-size: 16px;
+			font-weight: bold;
+			color: red;
+
+		}
+		.title1{width: 100%;height: auto}
+	</style>
+</head>
+<body>
+	<div class="title">TODO LIST</div>
+	<div class="inputarea">
+		<input type="text" id="text">
+		<input type="button" id="submit" value="提交">
+	</div>
+	<div class="title1">
+		<div class="contenttitle">未完成</div>
+		<div class="contenttitle">已完成</div>
+	</div>
+	
+	<div class="show">
+		<ul class="plan">
+			<li>
+				<input type="checkbox">
+					<span contenteditable="true">1233</span> 
+					<time>2017/5/3</time>
+			</li>
+		</ul>
+		<ul class="done">
+			<li>
+				<input type="checkbox">
+					<span contenteditable="true">1233</span> 
+					<time>2017/5/3</time>
+			</li>
+		</ul>
+	</div>
+</body>
+<script>
+	var text=document.querySelector("#text");
+
+	var submit=document.querySelector("#submit");
+
+	var plan=document.querySelector(".plan");
+	var done=document.querySelector(".done");
+
+	function getData(){//获取的时候去除JSON格式
+		return localStorage.todo?JSON.parse(localStorage.todo):[];
+	}
+	function saveData(data){//保存的时候保存字符串
+		localStorage.todo=JSON.stringify(data);
+	}
+
+	function reWrite(){
+
+		var data=getData();
+		var str1="";
+		var str2="";
+
+		Array.from(data).forEach(function(v,i){
+
+			if(!v.done){
+
+			str1+=`<li id="${i}"><input type="checkbox" ><span contenteditable="true" onblur="changecontent(this)" onfocus="changeState(this)">${v.content}</span><time>${time(v.time)}</time></li>`;
+			}else{
+				str2+=`<li id="${i}"><input type="checkbox"><span contenteditable="true" onfocus="del(this)">${v.content}</span><time>${time(v.time)}</time></li>`;
+			}
+		})
+
+		plan.innerHTML=str1;
+		done.innerHTML=str2;
+	}
+
+	submit.onclick=function(){
+		if(text.value==""){
+			console.log("空")
+			return;
+		}
+
+		var val=text.value;
+		text.value="";
+
+		var data=getData();   //获取数据
+		var date=new Date();
+		var time=date.getTime();
+
+		data.push({content:val,time,done:false})
+
+		saveData(data);
+		reWrite();
+	}
+
+	function time(t){  //t为毫秒数
+
+		var date=new Date();
+		date.setTime(t);  //返回年月日
+
+		var year=setZero(date.getFullYear());
+		var month=setZero(date.getMonth()+1);
+		
+		var day=setZero(date.getDate());
+		return year+"/"+month+"/"+day;
+	}
+
+	function setZero(num){
+		if(num<10){
+			return "0"+num;
+		}else{
+			return num;
+		}
+	}
+
+	function changeState(ele){
+		var id=ele.parentNode.id;
+		var data=getData();
+		data[id].done=true;
+
+		saveData(data);
+		reWrite();
+	}
+
+	function del(ele){
+		var id=ele.parentNode.id;
+		var data=getData();
+
+		data.splice(id,1);
+		saveData(data);
+		reWrite();
+
+	}
+
+	function changecontent(ele){
+		var id=ele.parentNode.id;
+		var val=ele.innerHTML;
+
+		var data=getData();
+		data[id].content=val;
+
+		saveData(data);
+		reWrite();
+
+	}
+	reWrite();
+</script>
+</html>
+<!-- jquery.ease-in.js -->
+<!-- <img src="" alt="" data-src="">  自定义属性 -->
+
+
+<!-- 按需加载 -->
+<style>
+/* 	img{
+		width: 300px;height: 400px;
+	} */
+</style>
+<!-- $(window).scrollTop()
+	<script>
+		$(window).scroll(function(){
+			var st=$(this).scrollTop();
+			var ch=$(this).height();
+			if((st+ch)>$(img).offset().top){
+				$(img).attr("src",function(){
+					return $(this).arrt("data-src");
+				})
+			}
+		})
+	</script>
+	jquery.lazy.s
+ -->

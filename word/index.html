@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>打字游戏</title>
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+		#live{
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<!-- 继续或返回 -->
+	<div class="zanting">
+		<img src="img/stopbox.png" alt="">
+		<a href="index.html"><div class="stabtn"></div></a>
+		<div class="stopbtn"></div>
+	</div>
+
+	<!-- 开始游戏 -->
+
+	<!-- <div class="kaishi">
+		<img src="img/logo.png" alt="" class="logo">
+
+	</div>
+ -->
+	<p  class="rankp">排行榜</p>
+	<table class="rank">
+		<tbody>
+			<tr>
+				<td class="td_name" colspan="2"></td>
+				
+			</tr>
+			<tr>
+				<td colspan="2" class="td_score"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="td_score1"></td>
+			</tr>
+		</tbody>
+		
+	</table>
+
+	<input type="button" value="查看" class="select">
+	
+	<div class="mask"></div>
+	<div class="scene">
+
+		<div class="main"></div>
+
+		<div class="control">
+				<div class="box">
+					<div class="name">得分</div>
+					<div class="score" style="color: #fff;font-size: 20px">0</div>
+				</div>
+
+				<div class="box">
+					<div class="name">关卡</div>
+					<div class="state" style="color: #fff;font-size: 20px">0</div>
+				</div>
+
+				<div class="box">
+					<div class="name">生命</div>
+					<div class="live" style="color: #fff;font-size: 20px">5</div>
+				</div>
+
+				<div class="start btn"></div>
+				<div class="pause btn">暂停</div>
+		</div>
+	</div>
+</body>
+
+<script>
+	// 创建字母
+	// var main=document.querySelector(".main");//主场景
+	// var obj={}
+
+	// var start=document.querySelector(".start")
+	// var control=true;
+	// var score=document.querySelector(".score");//得分
+
+	
+	// // 面向过程方法
+	// function createletter(){
+
+	// 	// 创建元素
+	// 	var div=document.createElement("div");
+
+	// 	//添加样式
+	// 	div.className="letter"; 
+
+	// 	//添加内容   字母不重复
+	// 	do{
+	// 		var r=Math.floor(Math.random()*26+65);
+	// 		var le=String.fromCharCode(r);
+	// 	}while(obj[le])  	//判断obj对象是否有le属性（某个字母）
+
+		
+	// 	div.innerHTML=le;
+
+	// 	//添加位置
+	// 	var top=Math.random()*100;
+
+	// 	do{
+	// 		var left=Math.random()*720;
+			
+	// 	}while(check(left))
+		
+	// 	// obj[le]=true;
+	// 	obj[le]={left:left,top:top,ele:div};   //给某个字母添加left属性
+
+
+	// 	div.style.left=left+"px";
+	// 	div.style.top=top+"px";
+
+	// 	main.appendChild(div);
+	// }
+
+	// // 判断是否有重叠
+	// function check(left){
+	// 	for(var i in obj){
+	// 		if(left>obj[i].left-80 && left<obj[i].left+80)
+	// 			return true;
+	// 	}
+	// }
+
+	// // 控制创建字母的个数
+	// function play(num){
+	// 	for(var i=0;i<num;i++){
+	// 		createletter()
+	// 	}
+	// }
+	 
+	
+	//  setInterval(function(){
+	// 	for(var i in obj){
+	// 		var t=obj[i].top;
+	// 		t+=5;
+	// 		obj[i].top=t;
+ // 			obj[i].ele.style.top=t+"px";
+	// 	}
+	// },50)
+
+	//  document.onkeydown=function(e){
+	// 	var keycode=e.keycode;
+	// 	var zimu=String.fromCharCode(keycode)
+
+	// 	if(obj[zimu]){
+	// 		main.removeChild(obj[zimu].ele);  //删除对象
+	// 		delete obj[zimu];					//移除obj的这个属性
+	// 		createletter()					//重新创建一个字母
+	// 	}
+	// };
+
+	// start.onclick=function(){
+	// 	control=false;
+	// 	start();
+	// }
+
+	//   play(5)
+
+</script>
+
+<script src="js/jQuery.js"></script>
+<script src="js/animate.js"></script>
+<!-- 面向对象 -->
+<script>
+	var start=document.querySelector(".start");
+	var control=true;
+	var score=document.querySelector(".score");//得分
+	var state=document.querySelector(".state");//关卡
+	var live=document.querySelector(".live");//生命值
+
+	// 排行榜
+	var td_name=document.querySelector(".td_name");
+	var td_score=document.querySelector(".td_score");
+	var td_score1=document.querySelector(".td_score1");
+	var tbody=document.querySelector("tbody");
+	var select=document.querySelector(".select");
+
+	var stopbtn=document.querySelector(".stopbtn");
+
+	var flag=true;
+	class Game{
+		constructor(main,score,state,live){//定义属性
+			this.main=main;
+			this.num=3;
+			this.obj={};
+
+			this.scoreele=score;   //接收score这个div元素
+			this.score=0;			//用于保存score这个div元素要显示的值
+			this.stateele=state;
+			this.state=1;
+			this.speed=5;
+
+			this.liveele=live;
+			this.live=5;
+
+			this.head=window.innerHeight;//屏幕高度
+
+			this.startcontrol=true;
+			this.st=null;
+
+			this.bestScore=localStorage.bestScore?JSON.parse(localStorage.bestScore):[];
+			clearInterval(this.st)
+
+			//保存排行榜信息
+
+			this.td_nameEle=td_name;
+			this.td_scoreEle=td_score;  //接收盒子
+
+			this.td_name1="";
+			this.td_score1=0;
+			
+			this.ph="";
+		}
+
+		_createLetter (){
+			var div=document.createElement("div");
+			div.className="letter";
+
+			this.startcontrol=false;
+			do{
+				var rn=Math.floor(Math.random()*26+65);
+				var le=String.fromCharCode(rn)
+			}while(this.obj[le])
+		
+
+			//div.innerHTML=le;
+
+			do{
+				var rl=Math.random()*720;
+			}while(this._check(rl))
+
+			var rt=-Math.random()*100;
+
+			div.style.left=rl+"px";
+			div.style.top=rt+"px";
+			div.style.backgroundImage="url(img/"+le+".png)";
+
+			this.obj[le]={left:rl,top:rt,ele:div}; 
+
+			this.main.appendChild(div);
+		}
+
+		_check(left){
+			for(var i in this.obj){
+				if(left>this.obj[i].left-80 && left<this.obj[i].left+80){
+					return true;
+				}
+			}
+		}
+
+		start(){
+			for(var i=0;i<this.num;i++)
+				{
+					this._createLetter()
+				}
+			this.move()
+			this._keydown()
+			
+		}
+
+		move(){
+			this.st=setInterval(function(){ 
+				for(var i in this.obj){
+					var t=this.obj[i].top;
+					t+=this.speed;
+					this.obj[i].top=t;
+ 					this.obj[i].ele.style.top=t+"px";
+
+ 					if(t>this.head){
+ 						this.live--;
+
+ 						this.liveele.innerHTML=this.live;
+
+ 						//删掉字母
+ 						this.main.removeChild(this.obj[i].ele);
+ 						delete this.obj[i];
+
+ 						this._createLetter()
+
+ 						if(this.live==0){
+ 							this._gameover();
+ 							return;  //终止setInterval函数运行
+ 						}
+ 					}
+				}
+			}.bind(this),50)   //setInterval中的this指的是window对象，用bind(this)改变指针指向
+		}
+
+		_keydown(){
+			document.onkeydown=function(e){  //this本身指document
+				var kc=e.keyCode;
+				var zm=String.fromCharCode(kc);
+
+				if(this.obj[zm]){
+					this.main.removeChild(this.obj[zm].ele);
+					delete this.obj[zm];
+					this._createLetter();
+
+					this.score++;
+					this.scoreele.innerHTML=this.score;
+
+					if(this.score%10==0){
+						this._upstate()
+					}
+				}
+			}.bind(this)
+		}
+
+		_upstate(){
+			this.state++;
+			this.stateele.innerHTML=this.state;
+			if(this.state<=4){
+				this._createLetter()
+			}else{
+				this.speed++;
+			}
+		}
+		_gameover(){
+
+			if(this.bestScore.length<3){
+				
+				var player=prompt("请输入姓名");
+				this.bestScore.push({player,score:this.score});
+
+				this.bestScore.sort(function(a,b){
+					if(a.score>b.score){
+						return -1;
+					}else{
+						return 1;
+					}
+				})
+
+				localStorage.bestScore=JSON.stringify(this.bestScore);
+			}else{
+
+				if(this.score>this.bestScore[2].score){  //分数大于第三个  插入  删除最后一个
+
+					var player=prompt("请输入姓名");
+					this.bestScore.push({player,score:this.score});
+
+					this.bestScore.sort(function(a,b){
+						if(a.score>b.score){
+							return -1;
+						}else{
+							return 1;
+						}
+					})
+
+					this.bestScore.pop();
+					localStorage.bestScore=JSON.stringify(this.bestScore);
+				}
+			}
+			
+			console.table(this.bestScore)
+
+				this.main.innerHTML="";
+				this.obj={};
+				this.score=0;
+				this.state=1;
+				this.speed=5;
+				this.live=5;
+				this.liveele.innerHtml=5;
+				this.scoreele.innerHTML=0;
+				this.stateele.innerHTML=1;
+
+			 	this.startcontrol=false;
+				this.st=null;
+		}
+
+		pause(){
+			clearInterval(this.st);
+		}
+		play(){
+			this.move()
+			this._keydown()
+		}
+
+		 getData(){
+			var data=localStorage.bestScore?JSON.parse(localStorage.bestScore):[];
+			return data;
+		}
+
+		 setData(data){ 
+			if(data==undefined|| data==""){
+				return;
+			}
+			localStorage.bestScore=JSON.stringify(data);
+		}
+
+		reWrite(){
+
+			var data=game.getData();
+			data.push({name:"",grade:""})  
+			this.setData(data)
+
+			Array.from(data).forEach(function(v,i){
+
+				str1+=`<tr id=${i}><td class="td_name">${v.name}</td><td class="td_score">${v.grade}</td></tr>`;
+
+				console.log(v)
+			})
+
+			this.bestScore=localStorage.bestScore?JSON.parse(localStorage.bestScore):[];
+			td_name.innerHTML=`玩家：${this.bestScore[0].player}  &nbsp;分数：${this.bestScore[0].score}`;
+			td_score.innerHTML=`玩家：${this.bestScore[1].player}  &nbsp;分数：${this.bestScore[1].score}`;
+			td_score1.innerHTML=`玩家：${this.bestScore[2].player}  &nbsp;分数：${this.bestScore[2].score}`;
+		}
+
+
+	}
+
+
+	var main=document.querySelector(".main");
+	var pausebtn=document.querySelector(".pause");
+	var game=new Game(main,score,state,live);
+
+	var zanting=document.querySelector(".zanting");
+	var mask1=document.querySelector(".mask");
+	
+	start.onclick=function(){
+		if(game.startcontrol){
+			game.start()
+		}
+		
+		console.log(localStorage.bestScore)
+	}
+	
+	pausebtn.onclick=function(){
+		mask1.style.display="block";
+		zanting.style.display="block";
+		if(flag){
+			pausebtn.innerHTML="继续";
+			game.pause();
+		}else{
+			pausebtn.innerHTML="暂停";
+			game.play()
+		}
+		flag=!flag;
+	}
+
+	var str1="";
+	var cishu=0;
+	select.onclick=function(){
+
+		console.log(localStorage.bestScore+"ssss");
+
+		game.reWrite();
+	}
+	game.reWrite();
+	stopbtn.onclick=function(){
+		mask1.style.display="none";
+		zanting.style.display="none";
+	}
+	</script>
+<script>
+	$(".rank").mouseover(function(){
+		$(this).animate({height:100},1000)
+	})
+	$(".rank").mouseout(function(){
+		$(this).animate({height:0},1000)
+	})
+</script>
+</html>

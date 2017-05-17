@@ -1,0 +1,4145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>京东商城首页</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<script src="js/index.js"></script>
+	<script src="js/animate.js"></script>
+	<script src="js/hover.js"></script>
+	<script src="js/JQuery.js"></script>
+	<script>
+		
+		window.onload=function(){
+			//下拉二级
+			var has_two=document.querySelectorAll(".has_two");
+			var istwo=document.querySelectorAll(".istwo");
+			Array.from(has_two).forEach(function(ele,index){
+				ele.onmouseover=function(){
+					istwo[index].style.height="auto";
+				}
+				ele.onmouseout=function(){
+					istwo[index].style.height=0;
+				}
+			})
+
+			//右侧固定
+			var fix_right=document.querySelectorAll("ul.right_bar li");
+			var fix_right_tan=document.querySelectorAll(".icon_des");
+
+			Array.from(fix_right).forEach(function(li,index){
+				li.onmouseover=function(){
+					fix_right_tan[index].style.display="block";
+					fix_right_tan[index].classList.remove("go");
+					fix_right_tan[index].classList.add("come");
+
+				}
+				li.onmouseout=function(){
+					fix_right_tan[index].style.display="none";
+					fix_right_tan[index].classList.remove("come");
+					fix_right_tan[index].classList.add("go");
+				}
+			})
+
+		}
+	</script>
+</head>
+<body>
+	
+	<!-- 左侧楼层跳转固定开始 -->
+	<div class="lift">
+		<ul class="lift_list">
+			<li><a href="" style="border-top: 0">享品质</a></li>
+			<li><a href="">服饰美妆</a></li>
+			<li><a href="">家电手机</a></li>
+			<li><a href="">电脑数码</a></li>
+			<li><a href="" style="letter-spacing: 3px">3C运动</a></li>
+			<li><a href="" style="line-height: 48px;">爱吃</a></li>
+			<li><a href="">母婴家具</a></li>
+			<li><a href="">图书汽车</a></li>
+			<li><a href="" style="line-height: 48px;">虚拟</a></li>
+			<li style="background: #D70B1C"><a href="" >还没逛够</a></li>
+			<li style="background: #5E4A4A">
+				<a href="">顶部
+					<div class="xiaosanjiao"></div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- 左侧楼层跳转固定结束 -->
+
+	<!-- 右侧固定开始 -->
+	<ul class="right_bar">
+		<li>
+			<a href="">
+				<div class="icon iconfont gerenzhongxin">&#xe653;
+					<div class="icon_des">京东会员</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="icon iconfont gouwuche">&#xe64a;
+					<div class="icon_des">购物车</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="icon iconfont heart-outline">&#xe638;
+					<div class="icon_des">我的关注</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="icon iconfont shizhong">&#xe627;
+					<div class="icon_des">我的足迹</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="icon iconfont xiaoxi">&#xe686;
+					<div class="icon_des">咨询MIJI</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="icon iconfont zixun">&#xe6bf;
+					<div class="icon_des">个人中心</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="icon iconfont fanhui2">&#xe626;
+					<div class="icon_des">返回顶部</div>
+				</div>
+			</a>
+		</li>
+		<li>
+			<a href="">
+				<div class="icon iconfont yewutubiaosheng">&#xe62e;
+					<div class="icon_des">反馈</div>
+				</div>
+			</a>
+		</li>
+		
+	</ul>
+	<!-- 右侧开始结束 -->
+
+	<!-- 顶部 -->
+	<div class="t">
+		<img src="img/top.jpg" alt="" class="ding">
+	</div>
+
+	<div class="shortcut">
+		<div class="w">
+			<div class="left">
+				<div style="float: left;width: 190px;background: blue;height: 100%"></div>
+				<div class="beijing">
+					<div class="bt">北京
+						<div class="dizhi iconfont daohang">&#xe600;</div>
+					</div>
+				</div>
+			</div>
+			<ul class="right">
+				<li><a href="">你好，请登录</a><span>|</span></li>
+				<li><a href="">免费登录</a><span>|</span></li>
+				<li><a href="">我的订单</a><span>|</span></li>
+				<li class="has_two"><a href="">
+					我的京东
+					<div class="my_jingdong istwo">
+						<div class="top">
+							<ul class="my_c">
+								<li><a href="">待处理订单</a></li>
+								<li><a href="">反修退换货</a></li>
+								<li><a href="">降价商品</a></li>
+							</ul>
+							<ul class="my_c">
+								<li><a href="">待处理订单</a></li>
+								<li><a href="">反修退换货</a></li>
+								<li><a href="">降价商品</a></li>
+							</ul>
+						</div>
+						<div class="bottom">
+							<ul class="my_c2">
+								<li><a href="">我的京东</a></li>
+								<li><a href="">我的白条</a></li>
+							</ul>
+							<ul class="my_c2">
+								<li><a href="">我的优惠券</a></li>
+								<li><a href="">我的理财</a></li>
+							</ul>
+						</div>
+						
+					</div>
+					</a>
+					<span>|</span>
+				</li>
+				<li><a href="">京东会员</a><span>|</span></li>
+				<li><a href="">企业采购</a><span>|</span></li>
+				<li class="has_two">
+					<a href="">客户服务</a><span>|</span>
+					<div class="client_service istwo">
+						
+						<div class="top">客户</div>
+						<div class="client">
+							<ul>
+								<li><a href="">帮助中心</a></li>
+								<li><a href="">在线客服</a></li>
+								<li><a href="">电话客服</a></li>
+								<li><a href="">金融咨询</a></li>
+							</ul>
+							<ul>
+								<li><a href="">售后服务</a></li>
+								<li><a href="">意见建议</a></li>
+								<li><a href="">客服邮箱</a></li>
+							</ul>
+						</div>
+						<div class="top">客户</div>
+						<div class="client" style="height: 70px;border-bottom: 0">
+							<ul>
+								<li><a href="">帮助中心</a></li>
+								<li><a href="">在线客服</a></li>
+							</ul>
+							<ul>
+								<li><a href="">售后服务</a></li>
+								<li><a href="">意见建议</a></li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="has_two">
+					<a href="">网站导航</a><span>|</span>
+					<div class="wzdh_con istwo">
+						<section>
+							<div class="top"><a href="">特色主题</a></div>
+
+							<div class="bottom">
+								<ul>
+									<li><a href="">京东预售</a></li>
+									<li><a href="">优惠券</a></li>
+									<li><a href="">定期送</a></li>
+									<li><a href="">预期售</a></li>
+								</ul>
+								<ul>
+									<li><a href="">北京老字号</a></li>
+									<li><a href="">港澳售</a></li>
+									<li><a href="">京东金融</a></li>
+									<li><a href="">装机大师</a></li>
+								</ul>
+								<ul>
+									<li><a href="">品牌头条</a></li>
+									<li><a href="">京东试用</a></li>
+									<li><a href="">京东会员</a></li>
+									<li><a href="">新奇特</a></li>
+								</ul>
+								<ul>
+									<li><a href="">发现好货</a></li>
+									<li><a href="">秒杀</a></li>
+									<li><a href="">企业金融服务</a></li>
+									<li><a href="">In货推荐</a></li>
+								</ul>
+							</div>
+							
+						</section>
+						<section>
+							<div class="top"><a href="">行业频道</a></div>
+
+							<div class="bottom">
+								<ul>
+									<li><a href="">京东预售</a></li>
+									<li><a href="">优惠券</a></li>
+									<li><a href="">定期送</a></li>
+									<li><a href="">预期售</a></li>
+								</ul>
+								<ul>
+									<li><a href="">北京老字号</a></li>
+									<li><a href="">港澳售</a></li>
+									<li><a href="">京东金融</a></li>
+									<li><a href="">装机大师</a></li>
+								</ul>
+								<ul>
+									<li><a href="">品牌头条</a></li>
+									<li><a href="">京东试用</a></li>
+									<li><a href="">京东会员</a></li>
+									<li><a href="">新奇特</a></li>
+								</ul>
+								<ul>
+									<li><a href="">发现好货</a></li>
+									<li><a href="">秒杀</a></li>
+									<li><a href="">企业金融服务</a></li>
+									<li><a href="">In货推荐</a></li>
+								</ul>
+							</div>
+							
+						</section>
+						<section>
+							<div class="top"><a href="">生活服务</a></div>
+
+							<div class="bottom">
+								<ul>
+									<li><a href="">京东预售</a></li>
+									<li><a href="">优惠券</a></li>
+									<li><a href="">定期送</a></li>
+									<li><a href="">预期售</a></li>
+								</ul>
+								<ul>
+									<li><a href="">北京老字号</a></li>
+									<li><a href="">港澳售</a></li>
+									<li><a href="">京东金融</a></li>
+									<li><a href="">装机大师</a></li>
+								</ul>
+								<ul>
+									<li><a href="">品牌头条</a></li>
+									<li><a href="">京东试用</a></li>
+									<li><a href="">京东会员</a></li>
+									<li><a href="">新奇特</a></li>
+								</ul>
+								<ul>
+									<li><a href="">发现好货</a></li>
+									<li><a href="">秒杀</a></li>
+									<li><a href="">企业金融服务</a></li>
+									<li><a href="">In货推荐</a></li>
+								</ul>
+							</div>
+							
+						</section>
+						<section>
+							<div class="top"><a href="">更多精选</a></div>
+
+							<div class="bottom">
+								<ul>
+									<li><a href="">京东预售</a></li>
+									<li><a href="">优惠券</a></li>
+									<li><a href="">定期送</a></li>
+									<li><a href="">预期售</a></li>
+								</ul>
+								<ul>
+									<li><a href="">北京老字号</a></li>
+									<li><a href="">港澳售</a></li>
+									<li><a href="">京东金融</a></li>
+									<li><a href="">装机大师</a></li>
+								</ul>
+								<ul>
+									<li><a href="">品牌头条</a></li>
+									<li><a href="">京东试用</a></li>
+									<li><a href="">京东会员</a></li>
+									<li><a href="">新奇特</a></li>
+								</ul>
+								<ul>
+									<li><a href="">发现好货</a></li>
+									<li><a href="">秒杀</a></li>
+									<li><a href="">企业金融服务</a></li>
+									<li><a href="">In货推荐</a></li>
+								</ul>
+							</div>
+							
+						</section>
+					</div>
+				</li>
+				<li style="margin-right: 0" class="has_two">
+					<a href="">手机京东
+						<div class="sjjd istwo">
+							<div class="c1">
+								<div class="left">
+									<img src="img/jdewm1.jpg" alt="">
+								</div>
+								<div class="right">
+									<p class="p1">手机京东</p>
+									<p class="p2">新人专享188元大礼包</p>
+									<div class="bottom">
+										<img src="img/sx1.png" alt="">
+									</div>
+								</div>
+								
+							</div>
+
+							<div class="c1">
+								<div class="left">
+									<img src="img/jdewm2.jpg" alt="">
+								</div>
+								<div class="right">
+									<p class="p1">关注京东微信</p>
+									<p class="p2">微信扫一扫关注新粉最高180元惊喜礼包</p>
+									<div class="bottom">
+										<img src="img/sx1.png" alt="">
+									</div>
+								</div>
+								
+							</div>
+
+							<div class="c1">
+								<div class="left">
+									<img src="img/jdewm3.jpg" alt="">
+								</div>
+								<div class="right">
+									<p class="p1">京东金融客户端</p>
+									<p class="p2">新人专享180元惊喜礼包</p>
+									<div class="bottom">
+										<img src="img/sx1.png" alt="">
+									</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<img src="img/topewm.jpg" alt="" class="rewm">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 顶部结束 -->
+
+	<!-- 导航开始 -->
+	<div class="headerbox  louceng">
+		<header>
+			<div class="logo"><img src="img/logo.v2.png" alt=""></div>
+			<div class="ss">
+				<input type="text" class="ssinput" placeholder="厨具">
+				<div class="ssr iconfont search" style="font-size: 25px;">
+					&#xe501;
+				</div>
+
+				<div class="cart">
+					<a href="">我的购物车
+						<div class="che iconfont gouwuche">&#xe64a;</div>
+						<div class="ling iconfont 0">&#xe61b;</div>
+						<div class="ling_bg"></div>
+					</a>
+				</div>
+			</div>
+
+			<div class="hotwords">
+				<span><a href="" style="color: #f10215;">粮油节</a></span>
+				<span><a href="">智能酷玩</a></span>
+				<span><a href="">满199减100</a>
+				</span><span><a href="">京东内衣节</a></span>
+				<span><a href="">家电秒杀</a></span>
+				<span><a href="">电饭煲</a></span>
+				<span><a href="">纸尿裤</a></span>
+				<span><a href="">满199减100</a></span>
+				<span><a href="">围巾男冬</a></span>
+				
+			</div>
+
+			<ul class="dhwords">
+				<li><a href="">秒杀</a></li>
+				<li><a href="">优惠券</a></li>
+				<li><a href="">闪购</a></li>
+				<li><a href="">拍卖</a></li>
+				<li><span style="line-height: 40px;">|</span></li>
+			</ul>
+			
+			<ul class="dhwords" style="margin-left: 0;width: 440px;">
+				<li><a href="">服装城</a></li>
+				<li><a href="">京东超市</a></li>
+				<li><a href="">生鲜</a></li>
+				<li><a href="">全球购</a></li>
+				<li><span style="line-height: 40px;float: left">|</span></li>
+				<li><a href="" style="margin-left: 20px;">京东金融</a></li>
+			</ul>
+			
+		</header>
+	</div>
+	
+	<!-- 导航结束 -->
+
+	<!-- 第一部分banner开始 -->
+	<div class="first">
+		<div class="content">
+			<!-- 左侧菜单 -->
+			<ul class="menu">
+				<li>
+					<a href="">家用电器</a>
+
+					<div class="dianqibox">
+						<div class="top">
+							<span>家电馆></span>
+							<span>品牌日></span>
+							<span>京东净化馆></span>
+							<span>城镇体验馆></span>
+							<span>家店众筹馆></span>
+
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href=""><span>手机</span></a><span class="menu_line">/</span>
+					<a href="">运营商</a><span class="menu_line">/</span>
+					<a href="">数码</a>
+				</li>
+				<li>
+					<a href="">电脑</a><span class="menu_line">/</span>
+					<a href="">办公</a>
+				</li>
+				<li>
+					<a href="">家居</a><span class="menu_line">/</span>
+					<a href="">家具</a><span class="menu_line">/</span>
+					<a href="">家装</a><span class="menu_line">/</span>
+					<a href="">厨具</a>
+				</li>
+				<li>
+					<a href="">男装</a><span class="menu_line">/</span>
+					<a href="">女装</a><span class="menu_line">/</span>
+					<a href="">童装</a><span class="menu_line">/</span>
+					<a href="">内衣</a>
+				</li>
+				<li>
+					<a href="">美妆个护</a><span class="menu_line">/</span>
+					<a href="">宠物</a>
+				</li>
+				<li>
+					<a href="">女鞋</a><span class="menu_line">/</span>
+					<a href="">箱包</a><span class="menu_line">/</span>
+					<a href="">钟表</a><span class="menu_line">/</span>
+					<a href="">珠宝</a>
+				</li>
+				<li>
+					<a href="">男鞋</a><span class="menu_line">/</span>
+					<a href="">运动</a><span class="menu_line">/</span>
+					<a href="">户外</a>
+				</li>
+				<li>
+					<a href="">汽车</a><span class="menu_line">/</span>
+					<a href="">汽车用品</a>
+				</li>
+				<li>
+					<a href="">母婴</a><span class="menu_line">/</span>
+					<a href="">玩具乐器</a>
+				</li>
+				<li>
+					<a href="">食品</a><span class="menu_line">/</span>
+					<a href="">酒类</a><span class="menu_line">/</span>
+					<a href="">生鲜</a><span class="menu_line">/</span>
+					<a href="">特产</a>
+				</li>
+				<li>
+					<a href="">医疗保健</a><span class="menu_line">/</span>
+					<a href="">计生情趣</a>
+				</li>
+				<li>
+					<a href="">图书</a><span class="menu_line">/</span>
+					<a href="">音像</a><span class="menu_line">/</span>
+					<a href="">电子书</a>
+				</li>
+				<li>
+					<a href="">机票</a><span class="menu_line">/</span>
+					<a href="">旅店</a><span class="menu_line">/</span>
+					<a href="">旅游</a><span class="menu_line">/</span>
+					<a href="">生活</a>
+				</li>
+				<li>
+					<a href="">理财</a><span class="menu_line">/</span>
+					<a href="">众筹</a><span class="menu_line">/</span>
+					<a href="">白条</a><span class="menu_line">/</span>
+					<a href="">保险</a>
+				</li>
+			</ul>
+			<div class="middle">
+				<!-- banner图 -->
+				<div class="banner">
+					<!-- 轮播箭头 -->
+					<div class="banner_pre iconfont jiantou">&#xe62c;</div>
+					<div class="banner_next iconfont jiantou">&#xe62c;</div>
+					<!-- 轮播点 -->
+					<div class="lbbtnbox">
+						<div class="lbbtn b_active"></div>
+						<div class="lbbtn"></div>
+						<div class="lbbtn"></div>
+						<div class="lbbtn"></div>
+						<div class="lbbtn"></div>
+						<div class="lbbtn"></div>
+						<div class="lbbtn"></div>
+						<div class="lbbtn"></div>
+					</div>
+					<div class="bannerlist">
+						<img src="img/banner1.jpg" alt="">
+						<img src="img/banner2.jpg" alt="">
+						<img src="img/banner3.jpg" alt="">
+						<img src="img/banner4.jpg" alt="">
+						<img src="img/banner5.jpg" alt="">
+						<img src="img/banner6.jpg" alt="">
+						<img src="img/banner7.jpg" alt="">
+						<img src="img/banner8.jpg" alt="">
+					</div>
+				</div>
+
+				<div class="bannerxia">
+					<img src="img/1/1.jpg!q90" alt="" class="con">
+					<img src="img/1/2.jpg!q90" alt="" class="con">
+				</div>
+			</div>
+			<div class="right">
+				<div class="user">
+					<div class="user_info">
+						<div class="touxiang"><img src="img/1/no_login.jpg" alt=""></div>
+
+						<p class="user_info_tip" >Hi，欢迎来到京东！</p>
+						<p> <a href="" class="user_info_login" style=" margin-right: 10px;">登录</a><a href="" class="user_info_reg">注册</a>              </p>
+					</div>
+					<div class="user_profit">
+						<div class="user_profit_lk"><a href="">新人福利</a></div>
+						<div class="user_profit_lk" style="margin-right: 0"><a href="">PLUS会员</a></div>
+					</div>
+					
+				</div>
+
+				<div class="news">
+					<ul class="top">
+						<li class="cc1">促销
+							<div class="ggcx"></div>
+						</li>
+						<li class="gg1">公告</li>
+						<li></li>
+						<li>更多</li>
+					</ul>
+
+					<div class="content">
+						<ul class="news_list news1">
+							<li><a href="">拜耳开业免税全场200减50</a></li>
+							<li><a href="">家居好货买4免1提前逛</a></li>
+							<li><a href="">家居日用满2件9折 满3件8折</a></li>
+							<li><a href="">奥克斯空调满1000减100</a></li>
+						</ul>
+						<ul class="news_list news2">
+							<li><a href="">进口好肉 两件八折</a></li>
+							<li><a href="">特惠机票降至98元</a></li>
+							<li><a href="">品牌厨具跨店3件7折</a></li>
+							<li><a href="">享品质生活</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="service">
+					<ul class="service_list">
+						<li class="hf_li"><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_20.png" alt="" class="se_icon">
+								</div>
+							
+								话费
+							</a>
+						</li>
+						<li class="jp_li"><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_12.png" alt="" class="se_icon">
+								</div>
+							机票</a></li>
+						<li class="jd_li"><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_21.png" alt="" class="se_icon">
+								</div>
+							酒店
+							</a>
+						</li>
+						<li class="yx_li"><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_05.png" alt="" class="se_icon">
+								</div>
+								游戏
+							</a>
+						</li>
+						<li><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_14.png" alt="" class="se_icon">
+								</div>
+								企业购
+							</a>
+						</li>
+						<li><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_01.png" alt="" class="se_icon">
+								</div>
+								加油卡
+							</a>
+						</li>
+						<li><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_13.png" alt="" class="se_icon">
+								</div>
+								电影票
+							</a>
+						</li>
+						<li><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_22.png" alt="" class="se_icon">
+								</div>
+								火车票
+							</a>
+						</li>
+						<li><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_07.png" alt="" class="se_icon">
+								</div>
+								众筹
+							</a>
+						</li>
+						<li><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_15.png" alt="" class="se_icon">
+								</div>
+								理财
+							</a>
+						</li>
+						<li><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_23.png" alt="" class="se_icon">
+								</div>
+								礼品卡
+							</a>
+						</li>
+						<li><a href="">
+								<div class="s_top">
+									<img src="img/service/service_icon_03.png" alt="" class="se_icon">
+								</div>
+								白条
+							</a>
+						</li>
+					</ul>
+
+					<!-- 话费内容 -->
+					<div class="hf_hidden hf_c">
+						<div class="close"></div>
+						<ul class="top">
+							<li>话费</li>
+							<li>机票</li>
+							<li>酒店</li>
+							<li>游戏</li>
+						</ul>
+
+						<div class="type">
+
+							<span class="active">
+								话费充值
+								<div class="kuai"></div>
+							</span>
+							<span>
+								流量充值
+								<div class="kuai"></div>
+							</span>
+							<span>
+								套餐变更
+								<div class="kuai"></div>
+							</span>
+						</div>
+
+						<div class="haoma">
+							<span>号码</span>
+							<input type="text" placeholder="移动/联通/电信">
+						</div>
+
+						<div class="mianzhi">
+							<span class="mz">面值</span>
+							<input type="text" class="yuan" placeholder="100元">
+							<span class="yuan2">￥98.0-￥100.0</span>
+						</div>
+
+						<div class="fast_cz">快速充值</div>
+
+						<div class="bot">
+							<span class="hot">HOT</span>
+							<span class="qi">强50元话费券</span>
+						</div>
+					</div>
+
+					<!-- 机票内容 -->
+					<div class="hf_hidden jp_c">
+						<div class="close"></div>
+						<ul class="top">
+							<li style="border-top: 0">话费</li>
+							<li class="active" style="border-top: 2px solid red">机票</li>
+							<li>酒店</li>
+							<li>游戏</li>
+						</ul>
+
+						<div class="type">
+
+							<span class="active">
+								国内机票
+								<div class="kuai"></div>
+							</span>
+							<span>
+								国际/港澳台
+								<div class="kuai"></div>
+							</span>
+							<span>
+								特惠活动
+								<div class="kuai"></div>
+							</span>
+						</div>
+
+						<div class="dancheng">
+							<input type="radio" checked>单程
+							<input type="radio" >往返
+						</div>
+
+						<div class="city">
+							<input type="text" placeholder="城市"></input>
+							<div class="chufa">出发</div>
+						</div>
+						<div class="city">
+							<input type="text" placeholder="城市"></input>
+							<div class="chufa">出发</div>
+						</div>
+						<div class="city">
+							<input type="text" placeholder="城市"></input>
+							<div class="chufa">出发</div>
+						</div>
+
+						<div class="bot"  style="padding:0 10px">
+							<span class="hot hot2" style="width: 57px">机票查询</span>
+							<span class="qi qi2">当即热门特惠机票</span>
+						</div>
+					</div>
+
+					<!-- 酒店内容 -->
+					<div class="hf_hidden jd_c">
+						<div class="close"></div>
+						<ul class="top">
+							<li>话费</li>
+							<li>机票</li>
+							<li class="active">酒店</li>
+							<li>游戏</li>
+						</ul>
+
+						<div class="type">
+
+							<span class="active">
+								国际/港澳台
+								<div class="kuai"></div>
+							</span>
+							<span>
+								促销活动
+								<div class="kuai"></div>
+							</span>
+
+						</div>
+
+
+						<div class="city">
+							<input type="text" placeholder="北京" style="width: 100%;padding-left: 80px"></input>
+							<div class="chufa" style="width: 65px">目的地</div>
+						</div>
+						<div class="city">
+							<input type="text" placeholder="2017-05-14" style="width: 100%;padding-left: 80px"></input>
+							<div class="chufa" style="width: 65px">入住日期</div>
+						</div>
+						<div class="city">
+							<input type="text" placeholder="2017-05-15" style="width: 100%;padding-left: 80px"></input>
+							<div class="chufa" style="width: 65px">离店日期</div>
+						</div>
+						<div class="city">
+							<input type="text" placeholder="酒店/商圈/地标" style="width: 100%;padding-left: 30px"></input>
+						
+						</div>
+
+						<div class="bot"  style="padding:0 10px">
+							<span class="hot hot2" style="width: 57px">酒店查询</span>
+							<span class="qi qi2">订酒店上京东</span>
+						</div>
+					</div>
+
+					<!-- 游戏内容 -->
+					<div class="hf_hidden yx_c">
+						<div class="close"></div>
+						<ul class="top">
+							<li>话费</li>
+							<li>机票</li>
+							<li>酒店</li>
+							<li class="active">游戏</li>
+						</ul>
+
+						<div class="type">
+							<span class="active" id="yz">
+								点卡
+								<div class="kuai"></div>
+							</span>
+							<span id="yz">
+								QQ
+								<div class="kuai"></div>
+							</span>
+							<span id="yz">
+								页游
+								<div class="kuai"></div>
+							</span>
+
+						</div>
+
+						<div class="game_pic">
+							<img src="img/ye1.png" alt="">
+							<img src="img/ye2.png" alt="">
+						</div>
+						<div class="bot"  style="padding:0 10px">
+							<span class="hot hot2" style="width: 57px">酒店查询</span>
+							<span class="qi qi2">订酒店上京东</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- 第一部分结束 -->
+
+	<!-- 顶部定位开始 -->
+	<div class="topbar">
+		<div class="topbar_content">
+			<div class="left"><img src="img/topbarlogo.png" alt=""></div>
+			<input type="text" placeholder="手机壳" style="background: #EFEFEF">
+			<div class="r_sousuo">
+				<div class="ss iconfont search">&#xe501;</div>
+			</div>
+		</div>
+	</div>
+	<!-- 顶部定位结束 -->
+
+	<!-- 秒杀开始 -->
+	<div class="miaosha">
+		<div class="content">
+			<div class="top">
+				<img src="img/jiao/jiao_07.png" alt="" class="ms_hd_left">
+				<img src="img/jiao/jiao_02.png" alt="" class="ms_hd_icon">
+				<div class="miaosha_tit">京东秒杀</div>
+
+				<div class="ms_subtit"><a href="">
+					总有你想不到的低价</a>
+					<div class="mm_more iconfont  next-s"
+					style="font-size: 18px;">&#xe628;</div>
+				</div>
+
+				<div class="ms_hd_right">
+					<div class="dangqiancc">当前场次</div>
+					<div class="shijian">
+						<div class="item"><span>00</span></div>
+						<div class="cd_split">:</div>
+						<div class="item"><span>24</span></div>
+						<div class="cd_split">:</div>
+						<div class="item"><span>30</span></div>
+					</div>
+					<div class="dangqiancc">后结束抢购</div>
+				</div>
+			</div>
+
+			<!-- 内容开始 -->
+			<div class="middle">
+				<div class="left">
+					<!-- 轮播箭头 -->
+					<div class="banner_pre iconfont jiantou">&#xe62c;</div>
+					<div class="banner_next iconfont jiantou">&#xe62c;</div>
+					<ul class="pro_list">
+					<li>
+						<img src="img/1/t2.jpg" alt="">
+						<div class="shadow"></div>
+						<p class="pro_des">TCL 大1匹  变频 冷暖  金典系列 空调挂机（钛金除甲醛 隐藏显示屏）(KFRd-26GW/XD13BpA)</p>
+
+						<div class="price">
+							<span class="price_new">￥299.00</span>
+							<span class="old_price"><del>￥368.00</del></span>
+						</div>
+					</li>
+					<li>
+						<img src="img/1/t1.jpg" alt="">
+						<div class="shadow"></div>
+						<p class="pro_des">佳农 越南进口红心火龙果 3个装 中果 总重约1.1KG 新鲜水果(KFRd-26GW/XD13BpA)</p>
+
+						<div class="price">
+							<span class="price_new">￥299.00</span>
+							<span class="old_price"><del>￥368.00</del></span>
+						</div>
+					</li>
+					<li>
+						<img src="img/1/t5.jpg" alt="">
+						<div class="shadow"></div>
+						<p class="pro_des">T格力（GREE）2匹 定频 i酷 冷暖圆柱柜机空调 KFR-50LW/(50551)NhAa-3</p>
+
+						<div class="price">
+							<span class="price_new">￥299.00</span>
+							<span class="old_price"><del>￥368.00</del></span>
+						</div>
+					</li>
+					<li>
+						<img src="img/1/t3.jpg" alt="">
+						<div class="shadow"></div>
+						<p class="pro_des">联想 Miix5 尊享版二合一平板电脑12.2英寸（i5-6200U 8G内存/256G/Win10 内含键盘/触控笔/Office)闪电银</p>
+
+						<div class="price">
+							<span class="price_new">￥299.00</span>
+							<span class="old_price"><del>￥368.00</del></span>
+						</div>
+					</li>
+					<li>
+						<img src="img/1/t4.jpg" alt="">
+						<div class="shadow"></div>
+						<p class="pro_des">华硕(ASUS) 顽石四代旗舰版FL5900 15.6英寸笔记本电脑(i7-7500U 4G 1TB +128GBSSD NV940MX 深蓝 FHD)</p>
+
+						<div class="price">
+							<span class="price_new">￥299.00</span>
+							<span class="old_price"><del>￥368.00</del></span>
+						</div>
+					</li>
+
+					<li>
+						<img src="img/ms2.jpg" alt="">
+						<div class="shadow"></div>
+						<p class="pro_des">【京东超市】光明 纯牛奶250ml*24盒/箱 </p>
+
+						<div class="price">
+							<span class="price_new">￥299.00</span>
+							<span class="old_price"><del>￥368.00</del></span>
+						</div>
+					</li>
+					<li>
+						<img src="img/ms3.jpg" alt="">
+						<div class="shadow"></div>
+						<p class="pro_des">水星（MERCURY）MAC1200R 1200M 11AC双频无线路由器穿墙王 稳定大覆盖</p>
+
+						<div class="price">
+							<span class="price_new">￥299.00</span>
+							<span class="old_price"><del>￥368.00</del></span>
+						</div>
+					</li>
+					<li>
+						<img src="img/ms4.jpg" alt="">
+						<div class="shadow"></div>
+						<p class="pro_des">韩束 红石榴鲜活水盈七件套 洗面奶爽肤水乳液眼霜面霜 (补水保湿鲜活水嫩 护肤化妆品女护肤套装）</p>
+
+						<div class="price">
+							<span class="price_new">￥299.00</span>
+							<span class="old_price"><del>￥368.00</del></span>
+						</div>
+					</li>
+					<li>
+						<img src="img/ms5.jpg" alt="">
+						<div class="shadow"></div>
+						<p class="pro_des">宏碁(acer)暗影骑士3 VX5 15.6英寸游戏笔记本(i5-7300HQ 8G 1T+128SSD GTX1050Ti 4G独显 win10背光键盘)</p>
+
+						<div class="price">
+							<span class="price_new">￥299.00</span>
+							<span class="old_price"><del>￥368.00</del></span>
+						</div>
+					</li>
+					<li>
+						<img src="img/ms6.jpg" alt="">
+						<div class="shadow"></div>
+						<p class="pro_des">【京东超市】泉林本色 抽纸 母婴可用不漂白环保面巾纸200抽*15包软抽（整箱销售）</p>
+
+						<div class="price">
+							<span class="price_new">￥299.00</span>
+							<span class="old_price"><del>￥368.00</del></span>
+						</div>
+					</li>
+				</ul>
+				</div>
+				
+
+				<div class="ms_special">
+					<img src="img/1/t5.jpg!q90" alt="" class="ms_special_pic">
+				</div>
+			</div>
+			<!-- 内容结束 -->
+		</div>
+	</div>
+	<!-- 秒杀结束 -->
+
+	<!-- 发现好货开始 -->
+	<div class="find">
+		<div class="find_content">
+			<div class="di">
+				<div class="f_c_top">
+					<div class="miaosha_tit">发现好货</div>
+					<div class="ms_subtit" style="margin-left: 140px;">发现品质生活
+					<div class="mm_more iconfont next_s">&#xe628;</div>
+
+				</div>
+
+				</div>
+
+				<ul class="haohuo">
+					<li>
+						<a href="">
+							<p class="haohuo_name">猫王 胡桃木蓝牙音箱</p>
+							<img src="img/1/th11.jpg" alt="" class="haohuo_img">
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<p class="haohuo_name">格列佛游记</p>
+							<img src="img/1/th10.jpg" alt="" class="haohuo_img">
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<p class="haohuo_name">多媒体扬声器系统</p>
+							<img src="img/1/th1.webp" alt="" class="haohuo_img">
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<p class="haohuo_name"> 三星 曲面智能电视</p>
+							<img src="img/1/th12.jpg" alt="" class="haohuo_img">
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<p class="haohuo_name">漫步者全功能音箱</p>
+							<img src="img/1/th2.webp" alt="" class="haohuo_img">
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<p class="haohuo_name">FIIL 运动蓝牙耳机</p>
+							<img src="img/1/th3.webp" alt="" class="haohuo_img">
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="di xiannv" style="position: relative;">
+
+				<div class="banner_pre iconfont jiantou">&#xe62c;</div>
+				<div class="banner_next iconfont jiantou">&#xe62c;</div>
+				<div class="f_c_top2">
+					<div class="miaosha_tit">优品专辑</div>
+					<div class="ms_subtit" style="margin-left: 140px;">甄选优质好物
+					<div class="mm_more iconfont next_s">&#xe628;</div>
+					</div>
+				</div>
+
+
+				<!-- 轮播部分开始 -->
+
+				<ul class="yp_lb_box">
+						<li class="active"></li>
+						<li></li>
+						<li></li>
+				</ul>
+				<div class="hhlunbo active" style="background: #fff">
+					<div class="youpin">
+					<p class="sub_desc">听说，你和仙女只隔着一层纱</p>
+
+					<img src="img/1/th3.webp" alt="" class="sup_img">
+					<img src="img/1/th4.webp" alt="" class="sup_img">
+					<img src="img/1/th5.webp" alt="" class="sup_img">
+
+					</div>
+
+					<div class="fenge"></div>
+					<div class="youpin">
+					
+					<p class="sub_desc">听说，你和仙女只隔着一层纱</p>
+
+					<img src="img/faxian/4.png" alt="" class="sup_img">
+					<img src="img/faxian/5.png" alt="" class="sup_img">
+					<img src="img/faxian/6.jpg" alt="" class="sup_img">
+					</div>
+				</div>
+
+				
+				<div class="hhlunbo hh2" style="background: #fff">
+					<div class="youpin">
+					<p class="sub_desc">听说，你和仙女只隔着一层纱</p>
+
+					<img src="img/faxian/21.jpg" alt="" class="sup_img">
+					<img src="img/faxian/22.jpg" alt="" class="sup_img">
+					<img src="img/faxian/23.jpg" alt="" class="sup_img">
+
+					</div>
+
+					<div class="fenge"></div>
+					<div class="youpin">
+					
+					<p class="sub_desc">适合陪同男友穿的字母T恤推荐</p>
+
+					<img src="img/faxian/24.jpg" alt="" class="sup_img">
+					<img src="img/faxian/25.jpg" alt="" class="sup_img">
+					<img src="img/faxian/b1.jpg" alt="" class="sup_img">
+					</div>
+				</div>
+
+				<div class="hhlunbo hh3" style="background: #fff">
+					<div class="youpin">
+					<p class="sub_desc">听说，你和仙女只隔着一层纱</p>
+
+					<img src="img/faxian/21.jpg" alt="" class="sup_img">
+					<img src="img/faxian/2.jpg" alt="" class="sup_img">
+					<img src="img/faxian/3.jpg" alt="" class="sup_img">
+
+					</div>
+
+					<div class="fenge"></div>
+					<div class="youpin">
+					
+					<p class="sub_desc">适合陪同男友穿的字母T恤推荐</p>
+
+					<img src="img/faxian/4.png" alt="" class="sup_img">
+					<img src="img/faxian/5.png" alt="" class="sup_img">
+					<img src="img/faxian/6.jpg" alt="" class="sup_img">
+					</div>
+				</div>
+				<!-- 轮播部分结束 -->
+			</div>
+			<div class="di">
+				<div class="f_c_top3">
+					<div class="miaosha_tit">排行榜</div>
+					<div class="ms_subtit" style="margin-left: 130px;">专属你的购物指南
+					<div class="mm_more iconfont next_s">&#xe628;</div>
+					</div>
+				</div>
+
+				<div class="phb_head">
+					<div class="item"><a href="">除湿机</a></div>
+					<div class="item"><a href="">手机通讯录</a></div>
+					<div class="item"><a href="">粮油调味</a></div>
+					<div class="item"><a href="">手机保护套</a></div>
+					<div class="item"><a href="">休闲鞋</a></div>
+				</div>
+
+				<ul class="phbcontent">
+					<li class="item">
+						<div class="rank">
+							<img src="img/rank/xing_05.png" alt="">
+							<p class="rank_word">1</p>
+						</div>
+						<a href="">
+							<div class="pic">
+								<img src="img/faxian/001" alt="">
+							</div>
+							<p class="name1">蒙奇奇 苹果6s手机壳磨砂防摔保护套 适用于iphone6/6s/6sPlus/6plus 6/6s 4.7英寸--深邃蓝</p>
+						</a>
+					</li>
+					<li class="item">
+						<div class="rank">
+							<img src="img/rank/xing_07.png" alt="">
+							<p class="rank_word">2</p>
+						</div>
+						<a href="">
+							<div class="pic">
+								<img src="img/faxian/002" alt="">
+							</div>
+							<p class="name1">【京东超市】JOBON中邦钥匙扣圈汽车钥匙扣链子母圈拉簧腰挂式 ZB-071B黑镍</p>
+						</a>
+					</li>
+					<li class="item">
+						<div class="rank">
+							<img src="img/rank/xing_22.png" alt="">
+							<p class="rank_word">3</p>
+						</div>
+						<a href="">
+							<div class="pic">
+								<img src="img/faxian/003" alt="">
+							</div>
+							<p class="name1">I'M HUAHUA520情人节生日礼物母亲节创意礼品永生花礼盒送女生 礼物-永生花玻璃罩BX253红色</p>
+						</a>
+					</li>
+					<li class="item">
+						<div class="rank">
+							<img src="img/rank/xing_26.png" alt="">
+							<p class="rank_word">4</p>
+						</div>
+						<a href="">
+							<div class="pic">
+								<img src="img/faxian/004" alt="">
+							</div>
+							<p class="name1">七夕情人节礼物 金箔玫瑰花束大号 送老婆女朋友生日礼物 女生创意表白浪漫温馨礼品520礼物 红色</p>
+						</a>
+					</li>
+					<li class="item">
+						<div class="rank">
+							<img src="img/rank/xing_26.png" alt="">
+							<p class="rank_word">5</p>
+						</div>
+						<a href="">
+							<div class="pic">
+								<img src="img/faxian/005" alt="">
+							</div>
+							<p class="name1">【自营配送康乃馨】母亲节礼物生日礼物女生情人节金玫瑰花送老婆创意送女友520礼物送妈妈 金色康乃馨</p>
+						</a>
+					</li>
+					<li class="item">
+						<div class="rank">
+							<img src="img/rank/xing_26.png" alt="">
+							<p class="rank_word">6</p>
+						</div>
+						<a href="">
+							<div class="pic">
+								<img src="img/faxian/006" alt="">
+							</div>
+							<p class="name1">雨花石按摩足垫爸爸妈妈生日礼物实用父亲节礼物送爸爸母亲节礼物送妈妈创意礼品送老年人长辈领导 A级 高密【福寿】A级石头棒！</p>
+						</a>
+					</li>
+				</ul>
+
+
+			</div>
+		</div>
+	</div>
+	<!-- 发现好货结束 -->
+
+	<!-- 领券中心开始 -->
+	<div class="lingquan">
+		<div class="content">
+			<div class="left">
+				<p class="lq_tit">领券中心</p>
+				<span class="lq_gap"></span>
+
+				<p class="meiqiangdao_txt">没抢到？</p>
+				<p class="meiqiangdao_txt">可以去看看更多优惠券</p>
+				<div class="lq_go_btn">
+					前往领券中心
+					<span><img src="img/pz/btn_15.png" alt="" class="lq_btn_ico"></span>
+				
+				</div>
+			</div>
+
+			<div class="right">
+				<ul class="lq_list">
+					<li>
+						<a href="">
+							<img src="img/lq1.webp" alt="">
+							<div class="lq_above">
+								<p class="price"><i>¥</i>600</p>
+
+								<div class="des">
+									仅可购买家纺指定商品
+								</div>
+								<p class="xiaofei">消费满1199元可用</p>
+								<p class="haoquan_more">更多好券</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/lq2.webp" alt="">
+							<div class="lq_above">
+								<p class="price"><i>¥</i>1200</p>
+
+								<div class="des">
+									仅可购买家纺指定商品
+								</div>
+								<p class="xiaofei">消费满1199元可用</p>
+								<p class="haoquan_more">更多服饰箱包券</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/lq3.webp" alt="">
+							<div class="lq_above">
+								<p class="price"><i>¥</i>3000</p>
+
+								<div class="des">
+									仅可购买家纺指定商品
+								</div>
+								<p class="xiaofei">消费满1199元可用</p>
+								<p class="haoquan_more">更多个户母婴券</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/lq4.webp" alt="">
+							<div class="lq_above">
+								<p class="price"><i>¥</i>500</p>
+
+								<div class="des">
+									仅可购买家纺指定商品
+								</div>
+								<p class="xiaofei">消费满1199元可用</p>
+								<p class="haoquan_more">更多食品饮料券</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/lq5.webp" alt="">
+							<div class="lq_above">
+								<p class="price"><i>¥</i>1500</p>
+
+								<div class="des">
+									仅可购买自营冰系冷博世西门子
+								</div>
+								<p class="xiaofei">消费满1199元可用</p>
+								<p class="haoquan_more">更多数码家电券</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 领券中心结束 -->
+
+	<!-- 去看看吧开始 -->
+	<div class="see">
+		<div class="content">
+			<ul class="middle">
+				<li><a href=""><img src="img/see1.jpg!q90" alt=""></a></li>
+				<li><a href=""><img src="img/see2.jpg!q90" alt=""></a></li>
+				<li><a href=""><img src="img/see3.jpg!q90" alt=""></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 去看看吧结束 -->
+
+	<!-- 享品质开始 -->
+	<div class="pz  louceng">
+		<div class="content">
+			<div class="top">
+				<p class="bt1">享品质</p>
+			</div>
+
+			<div class="content1">
+				<ul class="left">
+					<li>
+						<a href="">
+							<img src="img/pz/1.webp" alt="">
+							<div class="above shoufa">
+								<p class="tit">新品首发</p>
+								<p class="tit2">小米手机6 预约中</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/pz/2.webp" alt="">
+							<div class="above huiguang">
+								<p class="tit">会逛</p>
+								<p class="tit2">日淘正品好货   低至38元</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/pz/4.webp" alt="">
+							<div class="above jdcs">
+								<p class="tit">京东超市</p>
+								<p class="tit2">天天打折 款款实惠“尽情购”</p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<img src="img/pz/5.webp" alt="">
+							<div class="above baitiao">
+								<p class="tit">白条商城</p>
+								<p class="tit2">最高12期免息</p>
+							</div>
+						</a>
+					</li>
+					<li style="margin-bottom: 0">
+						<a href="">
+							<img src="img/pz/6.webp" alt="">
+							<div class="above scdp">
+								<p class="tit">奢侈大牌</p>
+								<p class="tit2">尽享品质生活 每满999减150</p>
+							</div>
+						</a>
+					</li>
+					<li style="margin-bottom: 0">
+						<a href="">
+							<img src="img/pz/3.webp" alt="">
+							<div class="above znsh">
+								<p class="tit">智能生活</p>
+								<p class="tit2">时尚智能潮货</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+
+				<div class="right">
+					<div class="main">
+
+						<div class="prebtn iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="list">
+							<li class="jdzb">
+								<div class="jdzbbox">
+											<div class="lbbtn b_active"></div>
+											<div class="lbbtn"></div>
+											<div class="lbbtn"></div>
+											<div class="lbbtn"></div>
+											<div class="lbbtn"></div>
+								</div>
+								
+									<div class="mask">
+										
+										<div class="top">
+											<div class="bt1">
+												<span>京东直播</span>
+												<span class="more">更多</span>
+												<span >
+													<img src="img/pz/btn_15.png" alt=""  class="lq_btn_ico" style="margin-top: 13px;">
+												</span>
+											</div>
+
+										</div>
+										
+										<img src="img/pz/btn111.png" alt="" class="play_btn">
+
+										<p class="wenzi">下午茶的时光玛格丽特饼干
+											<img src="img/pz/btn_03.png" alt="" class="clock">
+										</p>
+										<p class="wenzi2">下午茶的时光玛格丽特饼干</p>
+									</div>
+									<img src="img/zb5.jpg" alt="" class="img1 jdzbpic">
+									<img src="img/zb2.jpg" alt="" class="img1 jdzbpic">
+									<img src="img/zb1.jpg" alt="" class="img1 jdzbpic">
+									<img src="img/zb4.jpg" alt="" class="img1 jdzbpic">
+									<img src="img/zb1.jpg" alt="" class="img1 jdzbpic">
+								
+							</li>
+							
+						</ul>
+					</div>
+
+					<ul class="bottom">
+						<li>
+							<a href="">
+								<div class="qqjh_box">
+									<p class="tit">全球尖货</p>
+									<p class="tit2">全球自营好货</p>
+								</div>
+								<img src="img/pz/7.webp" alt="" class="r_hh">
+							</a>
+						</li>
+						<li >
+							<a href="" style="margin-right: 0;">
+								<div class="qqjh_box" style="background: #a93931;">
+									<p class="tit">设计师推荐</p>
+									<p class="tit2">体验全球好设计</p>
+								</div>
+								<img src="img/pz/8.webp" alt="" class="r_hh">
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 享品质结束 -->
+
+	<!-- 去看看吧开始 -->
+	<div class="see">
+		<div class="content">
+			<ul class="middle">
+				<li><a href=""><img src="img/see1.jpg!q90" alt=""></a></li>
+				<li><a href=""><img src="img/see2.jpg!q90" alt=""></a></li>
+				<li><a href=""><img src="img/see3.jpg!q90" alt=""></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 去看看吧结束 -->
+
+	<!-- 爱生活开始 -->
+	<div class="live louceng">
+		<div class="content">
+			<div class="top">
+				<p class="bt1">爱生活</p>
+			</div>
+
+			<div class="content2">
+				<div class="con">
+					<div class="top">
+						<p class="tit">爱逛</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh">
+							<div class="item">海澜之家</div>
+							<div class="item">箱包</div>
+							<div class="item">大牌钟表</div>
+							<div class="item">珠宝</div>
+							<div class="item">奢侈品</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/aiguang/fuzhuangcheng.jpg!q90" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">春天花会开</p>
+									<p class="biao2">低至29元</p>
+								<img src="img/live/1" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">母亲节钜惠</p>
+									<p class="biao2">低至29元</p>
+									<img src="img/live/8" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">今夏必备精选惠</p>
+									<p class="biao2">低至29元</p>
+									<img src="img/live/3" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">潮妈当道</p>
+									<p class="biao2">低至29元</p>
+									<img src="img/live/4" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+
+						<li>
+							<a href=""><img src="img/aiguang/b2.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/aiguang/b3.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/aiguang/b1.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="con">
+					<div class="top">
+						<p class="tit">爱美丽</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh">
+							<div class="item">防晒</div>
+							<div class="item">底妆</div>
+							<div class="item">补水保湿</div>
+							<div class="item">口红</div>
+							<div class="item">二兔一</div>
+							<div class="item">洗护大牌</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/f2.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">美妆馆</p>
+									<p class="biao2">爆款礼盒低至5折</p>
+								<img src="img/live/5" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">面部护肤</p>
+									<p class="biao2">面膜满199减100</p>
+									<img src="img/live/6" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">香水彩妆</p>
+									<p class="biao2">大牌低至8.8</p>
+									<img src="img/live/7" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">个护馆</p>
+									<p class="biao2">新版上线满199减100</p>
+									<img src="img/live/8" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/aiguang/b2.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/aiguang/b3.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/aiguang/b1.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 爱生活结束 -->
+
+	<!-- 家电馆开始 -->
+	<div class="live louceng jiadianguan" style="height: 550px;">
+		<div class="content">
+
+			<div class="content2">
+				<div class="con">
+					<div class="top" style="background: #724C8A">
+						<p class="tit">家电馆</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh">
+							<div class="item" style="background: #8C6DA0;">限时抢购</div>
+							<div class="item" style="background: #8C6DA0;">个护健康</div>
+							<div class="item" style="background: #8C6DA0;">高端厨电</div>
+							<div class="item" style="background: #8C6DA0;">最高减1000</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/j1.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">妈妈节钜惠</p>
+									<p class="biao2">小家电满2件199元</p>
+								<img src="img/live/11" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">0元预约</p>
+									<p class="biao2">尊享低价</p>
+									<img src="img/live/12" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">电视家影</p>
+									<p class="biao2">618提前抢</p>
+									<img src="img/live/13" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">洗碗机节</p>
+									<p class="biao2">666台 五折使用</p>
+									<img src="img/live/14" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/l4.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/l5.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/l6.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+
+						<ul class="b_logo">
+							<li><a href=""><img src="img/logo1.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/logo2.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/logo3.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/logo13.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/logo14.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/logo6.jpg" alt=""></a></li>
+						</ul>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/logo7.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/logo8.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/logo9.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/logo10.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/logo11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/logo12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="con">
+					<div class="top" style="background: #59688F">
+						<p class="tit">搞机派</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh">
+							<div class="item" style="background: #7784A5">金属机身</div>
+							<div class="item" style="background: #7784A5">快速充电</div>
+							<div class="item" style="background: #7784A5">拍照神器</div>
+							<div class="item" style="background: #7784A5">后置双摄像</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/j2.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">新Phone尚</p>
+									<p class="biao2">华为Mate9 新色上市</p>
+								<img src="img/live/15" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">24小时榜</p>
+									<p class="biao2">人气店铺 榜单揭秘</p>
+									<img src="img/live/16" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">京东网厅</p>
+									<p class="biao2">每天1元享800M</p>
+									<img src="img/live/17" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">京选卖家</p>
+									<p class="biao2">满500减20</p>
+									<img src="img/live/18" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/l1.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/l2.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/l3.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 家电馆结束 -->
+
+	<!-- 电脑数码开始 -->
+	
+	<div class="live louceng" style="height: 560px;">
+		<div class="content">
+			
+			<div class="shuma">
+						<p class="title">电脑数码</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm1">
+
+						<div class="dh">
+							<div class="item" >限时抢购</div>
+							<div class="item" >个护健康</div>
+							<div class="item" >高端厨电</div>
+							<div class="item" >最高减1000</div>
+							<div class="item" >限时抢购</div>
+							<div class="item" >个护健康</div>
+							<div class="item" >高端厨电</div>
+							<div class="item" >最高减1000</div>
+							<div class="item" >限时抢购</div>
+							<div class="item" >个护健康</div>
+							<div class="item" >高端厨电</div>
+							<div class="item" >最高减1000</div>
+						</div>
+					</div>
+
+			<div class="content2" style="height: 466px;">
+				<div class="con">
+					
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/sm1.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">电脑馆</p>
+									<p class="biao2">轻薄笔记本大满减</p>
+								<img src="img/live/21" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">外设装备</p>
+									<p class="biao2">金属外壳简约时尚</p>
+									<img src="img/live/22" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">电脑配件</p>
+									<p class="biao2">显示器每满100减20</p>
+									<img src="img/live/23" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">办公生活</p>
+									<p class="biao2">精品文具满149减50</p>
+									<img src="img/live/24" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/sm14].jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/sm15.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/sm16.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="con">
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/aiguang/fuzhuangcheng.jpg!q90" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">娱乐影音</p>
+									<p class="biao2">好音乐配好装备</p>
+								<img src="img/live/25" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">智能酷玩</p>
+									<p class="biao2">荣耀路由1元秒</p>
+									<img src="img/live/26" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">平板电脑</p>
+									<p class="biao2">iPad惊喜来袭</p>
+									<img src="img/live/27" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">相机盛典</p>
+									<p class="biao2">大牌单反低价抢</p>
+									<img src="img/live/28" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/sm11.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/sm12.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/sm13.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 电脑数码结束 -->
+
+	<!-- 玩3C开始 -->
+	<div class="live louceng" style="height: 560px;">
+		<div class="content">
+
+			<div class="content2">
+				<div class="con">
+					<div class="top" style="background: #35A6A4">
+						<p class="tit">玩3C</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh">
+							<div class="item" style="background: #5CB6B6;">限时抢购</div>
+							<div class="item" style="background: #5CB6B6;">个护健康</div>
+							<div class="item" style="background: #5CB6B6;">高端厨电</div>
+							<div class="item" style="background: #5CB6B6;">最高减1000</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/w1.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">手机专场</p>
+									<p class="biao2">新品值得买 360 N5高配版现货购</p>
+								<img src="img/live/31" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">以旧换新</p>
+									<p class="biao2">旧品折价 限时高价回收</p>
+									<img src="img/live/32" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">数码专区</p>
+									<p class="biao2">智能酷玩  潮品也低价</p>
+									<img src="img/live/33" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">二手优品</p>
+									<p class="biao2">优品秒杀 iphone6低至2399</p>
+									<img src="img/live/34" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/wl1.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/wl2.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/wl3.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="con">
+					<div class="top" style="background: #518978">
+						<p class="tit">爱运动</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh">
+							<div class="item" style="background: #6D9B8D">金属机身</div>
+							<div class="item" style="background: #6D9B8D">快速充电</div>
+							<div class="item" style="background: #6D9B8D">拍照神器</div>
+							<div class="item" style="background: #6D9B8D">后置双摄像</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/w2.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">运动</p>
+									<p class="biao2">运动潮品</p>
+								<img src="img/live/35" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">户外</p>
+									<p class="biao2">春季上新</p>
+									<img src="img/live/36" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">健身</p>
+									<p class="biao2">打造好身材</p>
+									<img src="img/live/37" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">骑行</p>
+									<p class="biao2">自由出行</p>
+									<img src="img/live/38" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/wl4.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/wl5.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/wl6.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 玩3C结束 -->
+
+	<!-- 爱吃开始 -->
+	<div class="live louceng" style="height: 570px;">
+		<div class="content" style="height: 473px;">
+			
+			<div class="shuma" style="background: #E69C2F;">
+						<p class="title">爱吃</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm1">
+
+						<div class="dh">
+							<div class="itemchi">坚果蜜饯</div>
+							<div class="itemchi">冲饮牛奶</div>
+							<div class="itemchi">休闲零食</div>
+							<div class="itemchi">粮油调味</div>
+							<div class="itemchi">糖果巧克力</div>
+							<div class="itemchi">饼干蛋糕</div>
+							<div class="itemchi">白酒</div>
+							<div class="itemchi">红酒</div>
+							<div class="itemchi">橙子</div>
+							<div class="itemchi">奇异果</div>
+							<div class="itemchi">北极虾</div>
+							<div class="itemchi">鸡蛋</div>
+						</div>
+					</div>
+
+			<div class="content2" style="height: 473px;">
+
+				<div class="con"  style="margin-right: 0">
+					
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/eat/b1.jpg!q90" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">粮油调味</p>
+									<p class="biao2">吃货节 2件5折</p>
+								<img src="img/eat/1.webp" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">饮料冲调</p>
+									<p class="biao2">吃货节 第二件半价</p>
+									<img src="img/eat/2.webp" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">休闲零食</p>
+									<p class="biao2">吃货节 领券99</p>
+									<img src="img/eat/3.webp" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">中外名酒</p>
+									<p class="biao2">满199减100</p>
+									<img src="img/eat/4.webp" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/eat/11.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/eat/12.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/eat/13.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="con">
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/eat/b2.jpg!q90" alt="">
+						</div>
+						<ul class="m_right2">
+
+							<div class="left">
+								<img src="img/eat/b3.jpg!q90" alt="">
+							</div>
+							<ul class="right">
+								<li>
+									<a href="">
+										<p class="biao1">东家菜</p>
+										<p class="biao2">霸道总裁 教你做菜</p>
+										<img src="img/eat/6.webp" alt="" class="bi_img">
+									</a>
+								</li>
+							<li>
+								<a href="">
+									<p class="biao1">“0“元试吃</p>
+									<p class="biao2">丰富好味 轻松品尝</p>
+									<img src="img/eat/3.webp" alt="" class="bi_img">
+								</a>
+							</li>
+							</ul>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/eat/14.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/eat/15.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/eat/16.jpg!q90" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+					 	<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 爱吃结束 -->
+
+	<!--爱家 爱宝宝开始 -->
+	<div class="live louceng" style="height: 560px;">
+		<div class="content">
+
+			<div class="content2">
+				<div class="con">
+					<div class="top" style="background: #35A6A4">
+						<p class="tit">爱家</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh">
+							<div class="item" style="background: #5CB6B6;">限时抢购</div>
+							<div class="item" style="background: #5CB6B6;">个护健康</div>
+							<div class="item" style="background: #5CB6B6;">高端厨电</div>
+							<div class="item" style="background: #5CB6B6;">最高减1000</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/ai1.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">奶粉辅食</p>
+									<p class="biao2">多买多优惠</p>
+								<img src="img/live/41" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">尿布湿巾</p>
+									<p class="biao2">大牌直降</p>
+									<img src="img/live/42" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">玩具乐器</p>
+									<p class="biao2">爆款抢不停</p>
+									<img src="img/live/43" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">陪伴宝宝</p>
+									<p class="biao2">两件八折</p>
+									<img src="img/live/44" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/ail1.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/ail2.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/ail3.png" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="con">
+					<div class="top" style="background: #518978">
+						<p class="tit">爱宝宝</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh">
+							<div class="item" style="background: #6D9B8D">金属机身</div>
+							<div class="item" style="background: #6D9B8D">快速充电</div>
+							<div class="item" style="background: #6D9B8D">拍照神器</div>
+							<div class="item" style="background: #6D9B8D">后置双摄像</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/ai2.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">家装建材</p>
+									<p class="biao2">满199减20</p>
+								<img src="img/live/45" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">厨具节</p>
+									<p class="biao2">>满199减100</p>
+									<img src="img/live/46" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">品质家居</p>
+									<p class="biao2">>满199减100</p>
+									<img src="img/live/47" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">居家日用</p>
+									<p class="biao2">领券>满199减100</p>
+									<img src="img/live/48" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/ail4.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/ail5.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/ail6.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--爱家 爱宝宝结束 -->
+
+	<!--爱车  爱阅读开始 -->
+	<div class="live louceng" style="height: 560px;">
+		<div class="content">
+
+			<div class="content2">
+				<div class="con">
+					<div class="top" style="background: #35A6A4">
+						<p class="tit">爱阅读</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh">
+							<div class="item" style="background: #5CB6B6;">限时抢购</div>
+							<div class="item" style="background: #5CB6B6;">个护健康</div>
+							<div class="item" style="background: #5CB6B6;">高端厨电</div>
+							<div class="item" style="background: #5CB6B6;">最高减1000</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/yd1.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">图书排行榜</p>
+									<p class="biao2">好书盘点</p>
+								<img src="img/live/51" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">特色书店</p>
+									<p class="biao2">每满49减15</p>
+									<img src="img/live/52" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">文学馆</p>
+									<p class="biao2">满100元7折</p>
+									<img src="img/live/53" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">童书馆</p>
+									<p class="biao2">每满150减50</p>
+									<img src="img/live/54" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/ydl1.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/ydl2.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/ydl3.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="con">
+					<div class="top" style="background: #518978">
+						<p class="tit">爱车</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh">
+							<div class="item" style="background: #6D9B8D">金属机身</div>
+							<div class="item" style="background: #6D9B8D">快速充电</div>
+							<div class="item" style="background: #6D9B8D">拍照神器</div>
+							<div class="item" style="background: #6D9B8D">后置双摄像</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/yd2.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">车载电器</p>
+									<p class="biao2">智能行车</p>
+								<img src="img/live/55" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">装饰自驾</p>
+									<p class="biao2">出游必备</p>
+									<img src="img/live/56" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">维修保养</p>
+									<p class="biao2">特价保养服务</p>
+									<img src="img/live/57" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">易车</p>
+									<p class="biao2">轻松购车</p>
+									<img src="img/live/58" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/ydl4.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/ydl5.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/ydl6.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--爱车  爱阅读结束 -->
+
+	<!-- 爱游戏 生活旅行 京东金融开始 -->
+	<div class="live louceng" style="height: 560px;">
+		<div class="content">
+
+			<div class="content2">
+				<div class="con2">
+					<div class="top" style="background: #5E5B99">
+						<p class="tit">爱游戏</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh2">
+							<div class="item" style="background: #66638F;">限时抢购</div>
+							<div class="item" style="background: #66638F;">个护健康</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/yx1.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							
+							<li>
+								<a href="">
+									<p class="biao1">虚拟充值</p>
+									<p class="biao2">枪林弹雨 青春回忆</p>
+									<img src="img/live/61" alt="" class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">游戏社区</p>
+									<p class="biao2">在线解答</p>
+									<img src="img/live/62" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/yxl1.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/yxl2.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="con2">
+					<div class="top" style="background: #4F7799">
+						<p class="tit">爱车</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh2">
+							<div class="item" style="background: #6C8CA7">金属机身</div>
+							<div class="item" style="background: #6C8CA7">快速充电</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/yx2.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">特惠机票</p>
+									<p class="biao2">1折起飞</p>
+								<img src="img/live/63" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">精选酒店</p>
+									<p class="biao2">五星酒店 随机立减</p>
+									<img src="img/live/64" alt="" class="bi_img">
+								</a>
+							</li>
+							
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/yxl3.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/yxl4.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+				<div class="con2">
+					<div class="top" style="background: #506A4F">
+						<p class="tit">京东金融</p>
+						<img src="img/aiguang/ewm.png" alt="" class="ewm">
+
+						<div class="dh2">
+							<div class="item" style="background: #6F856E">金属机身</div>
+							<div class="item" style="background: #6F856E">快速充电</div>
+						</div>
+					</div>
+
+					<!-- 中间 -->
+					<div class="top2">
+						<div class="m_left">
+							<img src="img/live/yx3.jpg" alt="">
+						</div>
+						<ul class="m_right">
+							<li>
+								<a href="">
+									<p class="biao1">微信指纹锁</p>
+									<p class="biao2">立省400</p>
+								<img src="img/live/65" alt="" 	class="bi_img">
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<p class="biao1">全景相机</p>
+									<p class="biao2"></p>
+									<img src="img/live/66" alt="" class="bi_img">
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					
+					<ul class="bottom">
+						<li>
+							<a href=""><img src="img/live/yxl5.jpg" alt="" class="bb_img"></a>
+						</li>
+						<li>
+							<a href=""><img src="img/live/yxl6.jpg" alt="" class="bb_img"></a>
+						</li>
+					</ul>
+
+					<div class="b_logo_box">
+						<div class="prebtn_b iconfont jiantou">&#xe62c;</div>
+						<div class="nextbtn_b iconfont jiantou" style="transform: rotate(180deg);">&#xe62c;</div>
+						<ul class="b_logo">
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+							<li><a href=""><img src="img/aiguang/b11.jpg" alt=""> </a></li>
+							<li><a href=""><img src="img/aiguang/b12.jpg" alt=""></a></li>
+						</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>	 
+	<!-- 爱游戏 生活旅行 京东金融结束 -->
+
+	<!-- 购物特色开始 -->
+	<div class="shopping">
+		<div class="shopping_con">
+			<div class="top">
+				<div class="shopping_bt">购物特色</div>
+			</div>
+
+			<ul class="main">
+				<li>
+					<a href="">
+						<div class="pm_mask">
+							<p class="sfpm">司法拍卖</p>
+							<p class="gkpm">法院好货 公开抢拍</p>
+						</div>
+						<img src="img/pm1.webp" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<div class="pm_mask" style="background: #7E6285">
+							<p class="sfpm">环球时尚</p>
+							<p class="gkpm">法院好货 公开抢拍</p>
+						</div>
+						<img src="img/pm2.webp" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<div class="pm_mask" style="background: #CE4040">
+							<p class="sfpm">品牌特卖</p>
+							<p class="gkpm">法院好货 公开抢拍</p>
+						</div>
+						<img src="img/pm3.webp" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<div class="pm_mask" style="background: #539A6F">
+							<p class="sfpm">京东健康</p>
+							<p class="gkpm">法院好货 公开抢拍</p>
+						</div>
+						<img src="img/pm4.webp" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<div class="pm_mask" style="background: #DC694F">
+							<p class="sfpm">陪伴宝宝</p>
+							<p class="gkpm">法院好货 公开抢拍</p>
+						</div>
+						<img src="img/pm5.webp" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<div class="pm_mask" style="background: #5D90B6">
+							<p class="sfpm">企业购</p>
+							<p class="gkpm">法院好货 公开抢拍</p>
+						</div>
+						<img src="img/pm6.webp" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<div class="pm_mask" style="background: #D6BF1D">
+							<p class="sfpm">IN货推荐</p>
+							<p class="gkpm">法院好货 公开抢拍</p>
+						</div>
+						<img src="img/pm7.webp" alt="">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 购物特色结束 -->
+
+	<!-- 去看看吧开始 -->
+	<div class="see">
+		<div class="content">
+			<ul class="middle">
+				<li><a href=""><img src="img/see1.jpg!q90" alt=""></a></li>
+				<li><a href=""><img src="img/see2.jpg!q90" alt=""></a></li>
+				<li><a href=""><img src="img/see3.jpg!q90" alt=""></a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 去看看吧结束 -->
+
+	<!-- 还没逛够开始 -->
+	<div class="shopping louceng" style="height: 2380px;">
+		<div class="shopping_con">
+			<div class="top">
+				<div class="shopping_bt">购物特色</div>
+			</div>
+
+			<ul class="see_content">
+				<li>
+					<a href="">
+						<img src="img/bottom/1.webp" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】怡口莲 原味 牛奶糖 90g</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/bottom/2.webp" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">小状元溜冰鞋儿童男女专用护具头盔</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/bottom/3.webp" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】澳大利亚进口红酒 黄尾袋鼠（Yellow Tail）珍藏西拉红葡萄酒 750ml</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/bottom/4.webp" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">故事思维</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/bottom/5.webp" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">西域骆驼男鞋2017春夏新款透气防滑网鞋休闲鞋豆豆鞋中老年健步鞋驾车鞋板鞋懒人鞋子 8805男款灰色 41</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+			</ul>
+
+			<ul class="see_content">
+				<li>
+					<a href="">
+						<img src="img/guang/1" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">汉妮威 记忆棉 办公室腰靠  靠枕 靠垫 椅子腰垫 沙发靠垫 8HP080502藏青色</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/2" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】完美芦荟胶40g 3支装</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/3" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】怡口莲 原味 牛奶糖 90g</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/4" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】怡口莲 原味 牛奶糖 90g</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/5" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】怡口莲 原味 牛奶糖 90g</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+			</ul>
+			
+			<ul class="see_content">
+				<li>
+					<a href="">
+						<img src="img/guang/6" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">汉妮威 记忆棉 办公室腰靠  靠枕 靠垫 椅子腰垫 沙发靠垫 8HP080502藏青色</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/7" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】完美芦荟胶40g 3支装</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/8" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">StarSky便携双筒望远镜高倍高清微光夜视旅游演唱会可接手机拍照非红外望眼镜 超清旗舰版840双筒望远镜+手机拍照夹+户外手电筒</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/9" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">mr.benyou 帆布鞋女2017夏季新款透气网纱韩版春季内增高小白鞋女 白色 36</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/10" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】越南进口 中原G7三合一速溶咖啡1600g (16gx100条）</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+			</ul>
+
+			<ul class="see_content">
+				<li>
+					<a href="">
+						<img src="img/guang/11" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】溢彩年华 原木生活实木加粗衣帽架 卧室办公挂衣架 落地晾衣架 DKC5548</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/12" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】溢彩年华 原木生活实木加粗衣帽架 卧室办公挂衣架 落地晾衣架 DKC5548</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/13" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】吉列剃须泡酷爽薄荷型刮胡泡210g</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/14" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】炊大皇304不锈钢盆筛五件套洗菜和面调料腌肉盆米筛五个组合装</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/15" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">ESK iPhone7 Plus/6S Plus/6 Plus钢化膜 苹果6/6s/7Plus 5.5英寸 钢化膜 手机保护玻璃贴膜(赠贴膜神器)</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+			</ul>
+
+			<ul class="see_content">
+				<li>
+					<a href="">
+						<img src="img/guang/16" alt="" class="more_photo">
+
+						<div class="more_info">绿驰(Greensky) 衣柜衣服可挂式除湿袋干燥剂防潮剂 室内房间汽车吸潮桶抽吸湿盒器防霉包</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/17" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">酷开(coocaa)K32小企鹅青春版 32英寸高清智能网络液晶平板电视 酷开系统 WiFi(黑色)</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/18" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】雪花啤酒（Snowbeer） 8度清爽500ml*12听整箱装</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/19" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">华为管理者内训书系 以奋斗者为本 华为公司人力资源管理纲要</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/20" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】潘婷去屑洗发水乳液修护750ml（洗发露 新老包装随机发放）</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+			</ul>
+
+			<ul class="see_content">
+				<li>
+					<a href="">
+						<img src="img/guang/21" alt="" class="more_photo">
+
+						<div class="more_info">绿【陕西馆】陕西特产 樊记黄桂稠酒0.9L瓶装 糯米酒</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/22" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】意大利进口 Balocco 百乐可 脆皮酥 焦糖味 200g</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/23" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">神火（supfire）C8T6 强光手电筒 远射LED充电式防身灯 配18650电池</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/24" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">桑玛耳钉925银女款仿珍珠耳坠韩版气质长款流苏耳环耳饰 E1646 银色-1对</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/25" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">allo&lugh阿路和如夏款男童儿童套装夏装运动短裤T恤两件套纯棉短袖卡通 浅黄色 110</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+			</ul>
+
+			<ul class="see_content">
+				<li>
+					<a href="">
+						<img src="img/guang/26" alt="" class="more_photo">
+
+						<div class="more_info">漫步者（EDIFIER） R101V 2.1声道多媒体音箱 音响  黑色</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/27" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】海天 精选生抽 黄豆酿造酱油 调料调味料1.75L</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/28" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【京东超市】维他 柠檬茶250ml*24盒 整箱</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/29" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">浪莎衬衫女 2017春季新款女装修身时尚显瘦长袖打底衫上衣女 白色（长袖）5830 L</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<img src="img/guang/30" alt="" class="more_photo">
+
+						<div class="more_info">
+							<p class="more_info_name">【太空旅途·京东重点合作伙伴】VEND 百搭新款潮流时尚双肩包大容量背包 休闲百搭双肩包 17216</p>
+
+							<div class="more_info_price">
+								￥<span class="more_info_price_txt">10.0</span>
+							</div>
+						</div>
+						
+						
+						
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 还没逛够结束 -->
+
+	<!-- 服务开始 -->
+	<div class="mod_service">
+		<div class="con">
+			<div class="mod_service_item">
+				<img src="img/duo.png" alt="" class="icon">
+				<p class="mod_service_txt">品类齐全,轻松购物</p>
+			</div>
+			<div class="mod_service_item">
+				<img src="img/logo/kuai.png" alt="" class="icon">
+				<p class="mod_service_txt">品类齐全,轻松购物</p>
+			</div>
+			<div class="mod_service_item">
+				<img src="img/logo/hao.png" alt="" class="icon">
+				<p class="mod_service_txt">品类齐全,轻松购物</p>
+			</div>
+			<div class="mod_service_item">
+				<img src="img/logo/sheng.png" alt="" class="icon">
+				<p class="mod_service_txt">品类齐全,轻松购物</p>
+			</div>
+		</div>
+	</div>
+	<!-- 服务结束 -->
+
+	<!-- 底部开始 -->
+	<div class="help">
+		<ul class="content">
+			<li>
+				<ul class="fuwuul">
+					<li class="bian"><a href="">服务渠道</a></li>
+					<li><a href="">自助终端</a></li>
+					<li><a href="">10086热线</a></li>
+					<li><a href="">实体营业厅</a></li>
+					<li><a href="">短信营业厅</a></li>
+					<li><a href="">网上营业厅</a></li>
+					<li><a href="">掌上/手机营业厅</a></li>
+				</ul>
+			</li>
+			<li>
+				<ul class="fuwuul">
+					<li  class="bian"><a href="">站点导航</a></li>
+					<li><a href="">MM</a></li>
+					<li><a href="">飞信</a></li>
+					<li><a href="">和包</a></li>
+					<li><a href="">咪咕阅读</a></li>
+					<li><a href="">网上营业厅</a></li>
+					<li><a href="">咪咕音乐</a></li>
+				</ul>
+			</li>
+			<li>
+				<ul class="fuwuul">
+					<li class="bian"><a href="">快捷服务</a></li>
+					<li><a href="">套餐变更</a></li>
+					<li><a href="">充值中心</a></li>
+					<li><a href="">话费查询</a></li>
+					<li><a href="">套餐余量</a></li>
+					<li><a href="">账单查询</a></li>
+					<li><a href="">星际查询</a></li>
+				</ul>
+			</li>
+			<li>
+				<ul class="fuwuul">
+					<li class="bian"><a href="">常见问题</a></li>
+					<li><a href="">忘记密码怎么办</a></li>
+					<li><a href="">话费余额查询</a></li>
+					<li><a href="">通过网银如何缴费</a></li>
+					<li><a href="">如何查询我的积分</a></li>
+					<li><a href="">密码如何修改</a></li>
+					<li><a href="">充值卡如何使用</a></li>
+				</ul>
+			</li>
+			<li>
+				<ul class="fuwuul">
+					<li class="bian"><a href="">商城服务指南</a></li>
+					<li><a href="">购物指南</a></li>
+					<li><a href="">付款方式</a></li>
+					<li><a href="">物流配送</a></li>
+					<li><a href="">售后服务</a></li>
+					<li><a href="">网上营业厅</a></li>
+					<li><a href="">个人中心</a></li>
+				</ul>
+			</li>
+			<li>
+				<ul class="fuwuul">
+					<li class="bian"><a href="">商城服务指南</a></li>
+					<li>
+						<a href="" style="height: 60px;margin-top: 20px;">
+							京东已向全国2661个区县提供自营配送服务，支持货到付款、POS机刷卡和售后上门服务。
+						</a>
+					</li>
+					<li><a href="" style="text-align: right;margin-top: -10px;">查看详情></a></li>
+					
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<!-- 版权开始 -->
+	<div class="copy">
+		<div class="content">
+			
+			<div class="btt">
+				<a href="">关于我们</a><span>&nbsp;|&nbsp;</span>
+				<a href="">联系我们</a><span>&nbsp;|&nbsp;</span>
+				<a href="h">联系客服</a><span>&nbsp;|&nbsp;</span>
+				<a href="">合作招商</a><span>&nbsp;|&nbsp;</span>
+				<a href="">商家帮助</a><span>&nbsp;|&nbsp;</span>
+				<a href="">营销中心</a><span>&nbsp;|&nbsp;</span>
+				<a href="">手机京东</a><span>&nbsp;|&nbsp;</span>
+				<a href="">友情链接</a><span>&nbsp;|&nbsp;</span>
+				<a href="">销售联盟</a><span>&nbsp;|&nbsp;</span>
+				<a href="">京东社区</a><span>&nbsp;|&nbsp;</span>
+				<a href="h">风险加测</a><span>&nbsp;|&nbsp;</span>
+				<a href="">隐私策略</a><span>&nbsp;|&nbsp;</span>
+				<a href="h">English Site</a><span>&nbsp;|&nbsp;</span>
+				<a href="">Contact</a>
+			</div>
+			<div class="btt">
+				京公网安备 11000002000088号<span>&nbsp;|&nbsp;</span>
+				京ICP证070359号<span>&nbsp;|&nbsp;</span>
+				互联网药品信息服务资格证编号(京)-经营性-2014-0008 <span>&nbsp;|&nbsp;</span>
+				新出发京零 字第大120007号 
+			</div>
+
+			<div class="btt">
+				Copyright@2014-2017<span>&nbsp;互联网出版许可证编号新出网证(京)字150号&nbsp;</span>
+				消费者维权热线：4006067733<span>&nbsp;&nbsp;</span>
+				违法和不良信息举报电话：4006561155
+			</div>
+			<div class="bbt" style="text-align: center;line-height: 33px;">
+				京东旗下网站：京东钱包<span>&nbsp;|&nbsp;</span>
+				<span>京东云</span>
+			 </div>
+
+		<!-- 	 <div class="bottom">
+			 	<div class="logo">
+			 		<img src="img/index/icon/knetSealLogo.png" alt="">
+			 	</div>
+			 </div> -->
+
+			 <div class="bottom" style="padding-left: 20px;height: 47px;padding-top: 15px;">
+			 		<img src="img/logo/logo_03.png" alt="" style="float: left;">
+			 		<img src="img/logo/logo_05.png" alt="" style="float: left;">
+			 		<img src="img/logo/logo_09.png" alt="" style="float: left;">
+			 		<img src="img/logo/logo_10.png" alt="" style="float: left;">
+			 		<img src="img/logo/logo_13.png" alt="" style="float: left;">
+			 		<img src="img/logo/logo_14.png" alt="" style="float: left;">
+	 	
+			 </div>
+		</div>
+	</div>
+	<!-- 版权结束 -->
+
+</body>
+
+<!-- 促销公告 -->
+<script>
+	// var gonggaos=document.querySelectorAll(".ggul1 li");//公告内容
+ //    	var gg=document.querySelector(".ggul1");		//公告栏
+ //    	var jtz=document.querySelector(".leftjiantou")
+ //    	var jty=document.querySelector(".rightjiantou");
+ //   		function move3(){
+ //        	var str=gonggaos[0].innerHTML;
+ //        	for(let i=0;i<gonggaos.length-1;i++){
+ //            	gonggaos[i].innerHTML=gonggaos[i+1].innerHTML;
+ //        	}
+ //        	gonggaos[gonggaos.length-1].innerHTML=str;
+	
+ //    	}
+
+ //    	function move4(){
+ //       	 var str1=gonggaos[gonggaos.length-1].innerHTML;
+ //        	for(let i=gonggaos.length-1;i>0;i--){
+ //           	 gonggaos[i].innerHTML=gonggaos[i-1].innerHTML;
+ //       	 }
+ //        	gonggaos[0].innerHTML=str1;
+
+ //    	}
+	
+ //    	var t5=setInterval(move3,5000);
+ //    	gg.onmouseover=function(){
+ //        	clearInterval(t5);
+ //    	}
+ //    	gg.onmouseout=function(){
+ //       	 t5=setInterval(move3,5000);
+ //    	};
+ //    	jtz.onclick=function () {
+ //        	move4()
+ //    	};
+ //    	jty.onclick=function () {
+ //        	move3()
+ //    	}
+</script>
+
+<!-- banner图 -->
+<script>
+	var bannerbox=document.querySelector(".banner");   //banner盒子
+	var pictures=document.querySelectorAll(".bannerlist img");	//banner图片
+	var btns=document.querySelectorAll(".lbbtnbox .lbbtn");  //轮播点
+	var b_next=document.querySelector(".banner_pre");
+	var b_pre=document.querySelector(".banner_next");
+	// console.log(b_next)
+	// console.log(b_pre)
+	var comeon;
+	var comeout;
+	var bannernum=0;
+	Array.from(btns).forEach(function(ele,index){
+
+				//控制快速鼠标移过效果
+				hover(ele,function(){
+					clearTimeout(comeon);
+					comeon=setTimeout(function(){
+						bannernum++;
+						ele.classList.remove("b_active");
+        				bannernum=index;
+        				for(var i=0;i<btns.length;i++){
+           		 			btns[i].style.background="#fff";
+            				pictures[i].style.opacity=0.5;
+            				pictures[i].style.zIndex=2;
+            		
+        				}
+        				ele.style.background="#DB192A";
+        				ele.classList.add("b_active");
+        				pictures[index].style.opacity=1;
+        				pictures[index].style.zIndex=100;
+
+					},300);
+					},function(){
+					
+				})
+   				
+			})
+
+	
+	function move(){
+	  	bannernum++;
+
+    	if(bannernum==btns.length){
+        	bannernum=0;
+    	}
+    	for(var i=0;i<btns.length;i++){
+        	btns[i].style.background="#fff";
+        	pictures[i].style.zIndex=2;
+        	pictures[i].style.opacity=0.5;
+    	}
+    	btns[bannernum].style.background="#DB192A";
+    	pictures[bannernum].style.zIndex=100;
+    	pictures[bannernum].style.opacity=1;
+	}
+
+	var stop=setInterval(move,2000);
+	bannerbox.onmouseover=function(){
+	 	clearInterval(stop);//清除setInterval()
+	}
+	bannerbox.onmouseout=function(){
+		stop=setInterval(move,2000);
+	}
+
+	b_pre.onclick=function(){
+      
+       move();
+    }
+	b_next.onclick=function(){
+		 bannernum-=2;
+		move();
+	}
+</script>
+
+<!-- 楼层跳转 -->
+<script>
+	//左侧楼层
+			var leftbar=document.querySelector(".lift");
+			var left_fixed_btns=document.querySelectorAll(".lift_list li");
+			var floors=document.querySelectorAll(".louceng");
+			var floorarr=[];
+			
+
+			Array.from(floors).forEach(function(floor,index){
+				floorarr.push(floor.offsetTop);
+			})
+			console.log(floorarr)
+			Array.from(left_fixed_btns).forEach(function(btn,index){
+				btn.onclick=function(){
+
+					window.scrollTop=floorarr[index];
+					animate(document.body,{scrollTop:floorarr[index]
+						
+					},200);
+
+				}
+			})	
+
+
+			var topbar=document.querySelector(".topbar");
+
+			window.onscroll=function(){
+				var obj=document.body;
+				var scrolltop=obj.scrollTop;
+
+			if(scrolltop>800){
+					leftbar.style.left="50%";
+					leftbar.style.marginLeft="-660px";
+					topbar.style.top=0;
+			}else{
+					leftbar.style.left="-8000px";
+					topbar.style.top="-50px";
+				}
+			}
+</script>
+
+<!-- 京东直播 -->
+<script>
+	var bannerbox1=document.querySelector(".jdzb");   //京东直播盒子
+	var pictures1=document.querySelectorAll(".jdzbpic");	//banner图片
+	var btns1=document.querySelectorAll(".jdzbbox .lbbtn");  //轮播点
+	var b_next1=document.querySelector(".pz .prebtn");
+	var b_pre1=document.querySelector(".pz .nextbtn");
+
+	var comeon;
+	var comeout;
+	var zbnum=0;
+	Array.from(btns1).forEach(function(ele,index){
+
+				//控制快速鼠标移过效果
+				hover(ele,function(){
+					clearTimeout(comeon);
+					comeon=setTimeout(function(){
+						zbnum++;
+						ele.classList.remove("b_active");
+        				zbnum=index;
+        				for(var i=0;i<btns1.length;i++){
+           		 			btns1[i].style.background="#fff";
+            				pictures1[i].style.opacity=0.5;
+            				pictures1[i].style.zIndex=2;
+            		
+        				}
+        				ele.style.background="#DB192A";
+        				ele.classList.add("b_active");
+        				pictures1[index].style.opacity=1;
+        				pictures1[index].style.zIndex=100;
+
+					},300);
+					},function(){
+					
+				})
+   				
+	})
+
+	
+	function movezb(){
+	  	zbnum++;
+
+    	if(zbnum==btns1.length){
+        	zbnum=0;
+    	}
+    	for(var i=0;i<btns1.length;i++){
+        	btns1[i].style.background="#fff";
+        	pictures1[i].style.zIndex=2;
+        	pictures1[i].style.opacity=0.5;
+    	}
+    	btns1[zbnum].style.background="#DB192A";
+    	pictures1[zbnum].style.zIndex=100;
+    	pictures1[zbnum].style.opacity=1;
+	}
+
+	var stop=setInterval(movezb,2000);
+	bannerbox1.onmouseover=function(){
+	 	clearInterval(stop);
+	}
+	bannerbox1.onmouseout=function(){
+		stop=setInterval(movezb,2000);
+	}
+
+	b_pre1.onclick=function(){
+       zbnum-=2;
+       movezb();
+    }
+	b_next1.onclick=function(){
+		
+		movezb();
+	}
+</script>
+ 
+
+ <!-- banner右侧 -->
+<script>
+ 	var hf_li=document.querySelector(".hf_li");
+ 	var hf_c=document.querySelector(".hf_c");
+ 	hover(hf_li,function(){
+ 		hf_c.style.display="block";
+ 	},function(){
+ 		hf_c.style.display="none";
+ 	})
+ 	
+ 	var jp_li=document.querySelector(".jp_li");
+ 	var jp_c=document.querySelector(".jp_c");
+ 	hover(jp_li,function(){
+ 		jp_c.style.display="block";
+ 	},function(){
+ 		jp_c.style.display="none";
+ 	})
+
+ 	var jd_li=document.querySelector(".jd_li");
+ 	var jd_c=document.querySelector(".jd_c");
+ 	hover(jd_li,function(){
+ 		jd_c.style.display="block";
+ 	},function(){
+ 		jd_c.style.display="none";
+ 	})
+
+ 	var yx_li=document.querySelector(".yx_li");
+ 	var yx_c=document.querySelector(".yx_c");
+
+ 	hover(yx_li,function(){
+ 		yx_c.style.display="block";
+ 	},function(){
+ 		yx_c.style.display="none";
+ 	})
+
+
+ 	var close1=document.querySelector(".close:nth-child(1)");
+ 	console.log(close1)
+ 	close1.onclick=function(){
+ 		hf_c.style.display="none";
+ 	}
+
+</script>
+
+<!-- 发现好货 -->
+<script>	
+
+			var hbtns=$(".yp_lb_box li");
+			var hpre=$(".find .banner_pre")
+			var hnext=$(".find .banner_next");
+	
+			hbtns.click(function(){
+
+				var index=$(this).index(".yp_lb_box li");
+
+				$("xiannv .hhlunbo").filter(".active").removeClass('active').end().eq(index).addClass('active')
+				hbtns.filter(".active").removeClass('active').end().eq(index).addClass('active')
+
+				hnum=index;
+
+			})	
+
+			var hnum=0;
+			
+			function hao(){
+				hnum++;
+				if(hnum==hbtns.length){
+					hnum=0;
+				}
+				if(hnum<0){
+					hnum=hbtns.length-1;
+				}
+				$(".xiannv .hhlunbo").filter(".active").removeClass('active').end().eq(hnum).addClass('active')
+				hbtns.filter(".active").removeClass('active').end().eq(hnum).addClass('active')
+
+			}	
+
+			var ht=setInterval(hao,2000);
+			$(".container").hover(function(){
+				clearInterval(ht)
+			},function(){
+				ht=setInterval(hao,2000);
+			})
+
+			hpre.click(function(){
+				hnum-=2;
+				hao();
+			})
+			hnext.click(function(){
+				hao()
+			})
+
+</script>
+
+
+<!-- // 秒杀 -->
+<script>
+		var ul = document.querySelector(".pro_list");
+        var m = document.querySelector(".miaosha .content .left");
+        var yjt = document.querySelector(".miaosha .banner_next ");
+        var zjt = document.querySelector(".miaosha .banner_pre");
+        console.log(ul)
+
+        var n = 0;
+
+        function msmove() {
+            if (ul.style.marginLeft == 0 + "px") {
+                ul.style.marginLeft = -1000 + "px"
+            }
+            else {
+                ul.style.marginLeft = 0;
+            }
+            n++;
+     
+        }
+
+        yjt.onclick = function () {
+            ul.style.marginLeft = -1000 + "px"
+            yjt.style.opacity = 0.5;
+            zjt.style.opacity = 1;
+        }
+        zjt.onclick = function () {
+            ul.style.marginLeft = 0;
+            zjt.style.opacity = 0.5;
+            yjt.style.opacity = 1;
+        }
+
+</script>
+<script>
+	function move_function(container, con,  pre ,next){
+
+
+    		function mi_move(){
+    		// 移走当前图片
+    			con[mi_num1].classList.add("leftOut");
+
+    			mi_num1++;
+
+    			if(mi_num1==con.length){
+      				mi_num1=0;
+    			}
+
+    			con[mi_num1].classList.add("leftIn")//后一张
+    			con[mi_num1].style.zIndex=miindex++;
+
+  			}
+
+   			Array.from(con).forEach(function(ele,index){
+    			ele.addEventListener("animationend",function(){
+      			ele.className="";
+      			flag=true;
+    			})
+  			})
+
+ 		 next.onclick=function(){
+    
+
+    		if(flag){
+      			flag=false;
+      			con[mi_num1].classList.add("rightOut");
+
+      
+     			 mi_num1--;
+      			if(mi_num1==-1){
+        			mi_num1=con.length-1;
+      			}
+      			con[mi_num1].classList.add("rightIn");
+      			con[mi_num1].style.zIndex=miindex++;
+
+      
+   		 	}
+  		}
+
+  		pre.onclick=function(){
+    		if(flag){
+      			flag=false;
+      			mi_move();
+    		}
+
+  		}
+  }
+
+  var b_logo_box=document.querySelector(".jiadianguan .b_logo_box");
+ // var inn1=document.querySelector(".jiadianguan .b_logo ")  //ul
+  var jdpre=b_logo_box.querySelector(".jiadianguan .prebtn_b ");
+  var jdnext=b_logo_box.querySelector(".jiadianguan .nextbtn_b ");
+
+  var jdcon=document.querySelectorAll(".jiadianguan .b_logo ");
+  var mi_num1=0;
+  var nrnow=jdcon[0];
+  var miindex=-1;
+  var flag=true;
+
+   move_function(b_logo_box,jdcon, jdpre,jdnext)
+</script>
+</html>

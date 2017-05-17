@@ -1,0 +1,77 @@
+.cooks {
+    height: 1283px;
+    width: 100%;
+    padding: 46px 12.5% 0;
+}
+.cook_content {
+    height: 770px;
+    width: 100%;
+    position: relative;
+}
+.cook_list{width: 100%;height: 539px;}
+.c_list_left{width:41.58%;height: 539px;float: left;}
+.c_list_right{width:41.58%;height: 539px;float: right;text-align:left;}
+.iii{width: 100%;height: 465px;}
+.p1{position: relative;height: 36px;line-height: 36px;font-size:22px;font-family: 苹方;font-weight: bold; }
+.p2{height: 22px;line-height: 22px;font-size:16px;font-family: 苹方;letter-spacing: 1px;color: #d39437;}
+.p3{color: #645a4c;height: 38px;line-height: 38px;font-size:16px;font-family: 苹方;letter-spacing: 1px;font-weight: bold;}
+.p4{width: 70%;height: 102px;line-height: 30px;font-size:9px;font-family: 苹方;letter-spacing: 1px;color: #645a4c;}
+.yake{height: 52px;position: relative;}
+.yake_zi{line-height: 52px;height: 100%;float: left;font-size:20px;font-family: 苹方;color: #727171;letter-spacing: 1px;}
+.yake_zi span{margin-left: 40px;}
+.shutiao{height: 36px;width: 2px;background: #727171;position: absolute;top:0;bottom:0;left:16%;margin:auto;}
+.yake_bottom{height: 74px;width: 100%;line-height: 74px;font-size:18px;font-family: 苹方;text-align: center;}
+.sekuai{width: 35px;height: 35px;background: #4b3e33;position: absolute;right:1px;top:-6px;margin:auto;}
+.intro_bt {
+    font-size: 40px;
+    text-align: center;
+    font-family: Georgia;
+    position: relative;
+}
+.intro_bt2 {
+    height: 62px;
+    text-align: center;
+    font-size: 24px;
+    font-family: 苹方;
+    color: rgb(208, 140, 30);
+    font-weight: bold;
+    line-height: 62px;margin-bottom: 100px;
+}
+.as_cook{height: 500px;width: 75%;display: flex;margin:0 auto;}
+.as_cook li{justify-content: space-between;width: 33.33%;}
+.as_cook li .top{height: 383px;width: 100%;}
+.bottom1{height: 55px;line-height: 55px;font-size: 22px;text-align: center;}
+.bottom2{height: 47px;font-size: 20px;text-align: center;font-family: 苹方;line-height: 47px;font-weight: bold;}
+.cooks .top1 {
+    height: 18px;
+    width: 100%;
+    font-size: 10px;
+    position: relative;
+    color: #857766;
+}
+.cooks .top2 {
+    height: 30px;
+    width: 100%;
+    font-size: 18px;
+    color: #857766;
+}
+.cooks .top1 span {
+    margin-left: 9%;
+    color: #000;
+}
+.cooks .top2 span {
+    height: 30px;
+    width: 100%;
+    color: #D08C1E;
+    margin-left: 8.5%;
+}
+.dian {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+    left: 7.5%;
+    top: 4px;
+    margin: auto;
+}

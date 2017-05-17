@@ -1,0 +1,50 @@
+.dh_tiao{width: 4.75%;height: 2px;background: #D81E06;position: absolute;}
+.ms{height: 1198px;width: 100%;margin-top: 50px;padding:46px 12.5% 0;}
+.ms .top1{height: 18px;width: 100%;font-size: 10px;position: relative;color: #857766;}
+.ms .top1 span{margin-left: 9%;color: #000;}
+.dian{width: 10px;height: 10px;border-radius: 50%;background: #000;position: absolute;left:7.5%;top:4px;margin:auto;}
+.ms .top2{height: 30px;width: 100%;font-size: 18px;color: #857766;}
+.ms .top2 span{height: 30px;width: 100%;color:#D08C1E;margin-left: 8.5%;}
+.ms_bt{font-size: 42px;text-align: center;font-family: Georgia;position: relative;}
+.mt_bt_tiao,.mt_bt_tiao2{width: 10.375%;height: 1px;background: #E4E2E2;position: absolute;top:23px;margin:auto;}
+.mt_bt_tiao{left:28%;}
+.mt_bt_tiao2{right:28%;}
+.ms_bt2{height: 62px;text-align: center;font-size: 24px;font-family:苹方;color: #D08C1E;font-weight: bold;line-height: 62px;}
+.ms .ms_content{height: 873px;width: 100%;position: relative;}
+.mht{width: 34.16%;height: 730px;background: #231C1C;margin:0 auto;padding-top: 50px;}
+.mht_bt{line-height: 80px;font-family: 方正兰亭;font-size: 18px;text-align: center;color: #AA731D;font-weight: bold;}
+.mht_yw{margin-bottom: 32px;line-height: 20px;font-family: 方正兰亭;font-size: 12px;text-align: center;color: #fff;}
+.jiantou{width: 100%;height: 296px;text-align: center;color: #fff;margin:0 auto;}
+.jiantou li{width: 5%;margin:0 auto;font-size: 20px;line-height: 30px;}
+.for{font-size:20px ;line-height: 23px;color: #fff;text-align: center;width: 60%;margin:0 auto;font-family: Georgia;margin-top: 30px;margin-bottom: 20px;}
+.chocolate{letter-spacing: 3px;text-align: center;font-size: 27px;line-height: ;color: #D08C1E;font-family: 方正兰亭;}
+.left1{width: 27%;height: 313px;border:1px solid #898484;position: absolute;top:111px;}
+.left1_img{width: 457px;height: 216px;position: absolute;top:64px;left: 0;margin:auto;}
+.left1_img2{width: 40%;height: 206px;position: absolute;bottom:13px;left:10%;margin:auto;}
+.right1{width: 21.25%;height: 350px;position: absolute;bottom:90px;right: 0;margin:auto;border:1px solid #898484;}
+.right1_img{position: absolute;margin:auto;width: 36.4%;height: 254px;top:526px;right:20px;}
+/* 今日推荐开始 */
+.intro{height: 1173px;width: 100%;padding:46px 12.5% 0;}
+.intro .top2 span{height: 30px;width: 100%;color:#D08C1E;margin-left: 8.5%;}
+.intro_bt{font-size: 42px;text-align: center;font-family: Georgia;position: relative;}
+.intro_bt_tiao,.intro_bt_tiao2{width: 10.375%;height: 1px;background: #E4E2E2;position: absolute;top:23px;margin:auto;}
+.intro_bt_tiao{left:23%;}
+.intro_bt_tiao2{right:23%;}
+.intro_bt2{height: 62px;text-align: center;font-size: 24px;font-family:苹方;color: #D08C1E;font-weight: bold;line-height: 62px;}
+.intro .intro_content{height: 936px;width: 100%;position: relative;top:40px;}
+.intro_left{width: 50%;height:100%;float: left;}
+.intro_img1{height: 61%;width: 83.3%;}
+.intro_left .bottom{height: 362px;width: 100%;position: relative;}
+.intro_left .bottom .bottom1{font-size: 20px;font-family: Georgia;line-height: 48px;font-weight: bold;}
+.intro_left .bottom .name{font-size: 20px;font-family: 方正兰亭;line-height: 20px;color: #D29026;letter-spacing: 4px;}
+.intro_left .bottom .bottom_des{width: 80%;line-height: 45px;font-size: 12px;letter-spacing: 4px;font-family: Georgia;margin-top: 30px;color: #4F4242;}
+.red_jt{width: 70px;height: 63px;position: absolute;top:0;right:0;margin:auto;}
+.red_jt1{width: 70px;height: 63px;position: absolute;top:0;left:0;margin:auto;}
+
+.intro_right{width: 50%;height:100%;float: left;position: relative;}
+.intro_rightimg1{height: 61%;width: 83.3%;position: absolute;right:0;bottom:0;margin:auto;}
+.intro_right .bottom{height: 362px;width: 100%;}
+.intro_right .bottom .bottom1{text-align: right;font-size: 20px;font-family: Georgia;line-height: 48px;font-weight: bold;}
+.intro_right .bottom .name{text-align: right;font-size: 20px;font-family: 方正兰亭;line-height: 20px;color: #D29026;letter-spacing: 4px;}
+.intro_right .bottom .bottom_des{float:right;text-align: right;width: 80%;line-height: 45px;font-size: 12px;letter-spacing: 4px;font-family: Georgia;margin-top: 30px;color: #4F4242;}
+/* 今日推荐结束 */
