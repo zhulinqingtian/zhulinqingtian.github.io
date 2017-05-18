@@ -25,16 +25,19 @@
   			url('https://at.alicdn.com/t/font_g8sl9jdpj27f1or.svg#iconfont') format('svg');
 			}
 		canvas{
-			background:#ccc;
+			/*background:#ccc;*/
 			display: block;
 			margin: 0 auto;
-			background: url('canvas.jpg') center center no-repeat;
-			background-size: cover;
+			/*background: url('1.jpg') center center no-repeat;*/
+			/*background-size: cover;*/
+		}
+		html,body{
+			background: url('2.jpg') left bottom no-repeat;
+			background-size: 100%;
 		}
 		.box{
 			width: 200px;
 			height: 100%;
-			background: lightskyblue;
 			position: absolute;
 			top: 0;
 			left: 10px;
@@ -62,7 +65,7 @@
 	<script src="draw.js"></script>
 </head>
 <body>
-	<canvas width="500px" height="500px"></canvas>
+	<canvas width="1000px" height="620px"></canvas>
 <div class="box">
 	<section>
 		<label for="">选择形状</label>
@@ -126,6 +129,7 @@
 	var redo=document.querySelector("#redo");
 	var clear=document.querySelector("#clear");
 	var save=document.querySelector("#save");
+	console.log(side)
 
 	shape.onchange=function(){//内容改变并且失去焦点
 		s=this.value;
@@ -142,6 +146,7 @@
 	}
 	side.onchange=function(){
 		si=this.value;
+		console.log(side)
 	}
 
 	redo.onclick=function(){
