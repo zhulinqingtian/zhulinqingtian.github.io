@@ -1,3 +1,8 @@
+.dhwords>li {
+    width: 21%;
+    height: 100%;
+    float: left;
+}
 .my_jingdong{
     width: 282px;height: 162px;
     background: #fff;
@@ -362,6 +367,7 @@ margin-right: 30px;}
     color: #fff;float: left;
 }
 .menu>li {
+    width: 100%;
     overflow: hidden;
     padding-left: 12px;
     height: 30px;
@@ -370,19 +376,86 @@ margin-right: 30px;}
     color: #fff;
     position: relative;
 }
-
+.dianqibox .right_con{
+    position: absolute;
+    width:200px;
+    height:100%;
+    padding:20px;
+    top:0;
+    right:20px;
+}
+.dianqibox .right_con .first{
+    width: 100%;
+    height: 36px;
+    display: flex;
+    margin-bottom: 2px;
+}
+.dianqibox .right_con .first div{
+    width: 50%;
+    height: 36px;
+    justify-content: space-between;
+    margin-right: 2px;
+}
+.dianqibox .right_con .first .right{
+    margin-right: 2px;
+    background: red;
+}
+.dianqibox .right_con .first .right>img{
+    width: 100%;height:100%;
+}
+.dianqibox .right_con .second{
+    width: 100%;height: 135px;background: lime;
+}
+.dianqibox .right_con .second>img{
+    width: 100%;height:135px;
+}
+.dianqibox .right_con .first .left>img{
+    width: 100%;height:100%;
+}
+.dianqibox .right_con .first .left{
+    background: #000;
+}
 .dianqibox{
-    position: absolute;left:190px;
-    width: 1005px;height: 505px;background: #fff;z-index: 5000;
+    position: absolute;left:269px;
+    width: 1005px;height: 505px;background: #F6F6F6;
+    z-index: 100000;
     font-size: 10px;color: #333;text-align: center;
     padding: 10px;
+    display: none;
 }
 .dianqibox .top{
     width: 100%;
-    height: 26px;
+    height: 32px;
+    padding-top: 5px;
+    text-align: left;
+    padding-left: 10px;
+    margin-top: 10px;
+}
+
+.dianqibox .item{
+    width: 75%;
+    height: 24px;
+    text-align: left;
+    padding-left: 10px;
+    margin: 9px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+.dianqibox .item>span{
+    display: inline-block;
+    padding: 2px 1px;
+}
+.a{
+    color:#EEEEEE ;
+}
+.dianqibox .item>span:nth-child(1){
+    border-right:1px solid #ccc;
+    margin-right: 5px;
+    width: 75px;
 }
 .dianqibox .top span{
-    width: auto;background: #000;color: #fff;
+    width: auto;background: #6E6568;
+    color: #fff;
+    padding: 5px 5px;
 }
 
 .menu>li>a{color: #fff;width: 30px;height: 30px;
@@ -574,10 +647,13 @@ margin-right: 30px;}
     line-height: 14px;
     height: 27px;font-size: 10px;
 }
-.news>.top >li{float: left;    color: #333;
+.news>.top >li{float: left;
+    color: #333;
     padding-right: 12px;
     padding-left: 12px;
+    width: 33%;
 }
+li{text-align: center;}
 .news>.top >li:nth-child(1){
     color: #333;
     padding-right: 12px;
@@ -590,6 +666,12 @@ margin-right: 30px;}
     cursor: pointer;
     position: relative;
 }
+/*.b_logo>li:nth-child(6){*/
+    /*border-right:0;*/
+/*}*/
+/*.b_logo_box>li:nth-child(6){*/
+    /*border-right:0;*/
+/*}*/
 .ggcx{
     position: absolute;
     bottom: -5px;
@@ -622,7 +704,11 @@ margin-right: 30px;}
 .news2{
     display: none;
 }
-.news_list>li{line-height: 25px;height: 25px;}
+.news_list>li{
+    line-height: 25px;
+    height: 25px;
+    width: 100%;
+}
 .news_list>li>a{
     width: 160px;height: 25px;font-size: 10px;
 }
@@ -1144,7 +1230,7 @@ body{color: #666;}
     left: 18px;
     padding-left: 5px;
 }
-.find .banner_pre, .banner_next {
+.find .banner_pre {
     width: 18px;
     height: 42px;
     background: rgba(255,255,255,0.1);
@@ -1159,6 +1245,35 @@ body{color: #666;}
     cursor: pointer;
     opacity: 0;
 }
+html,body{
+    overflow-x: hidden;
+}
+.find .banner_pre{
+    width: 18px;
+    height: 42px;
+    background: rgba(255,255,255,0.1);
+    position: absolute;
+    top: 20px;
+    bottom: 0;
+    margin: auto;
+    z-index: 1000;
+    font-size: 10px;
+    color: #ccc;
+    padding-top: 15px;
+    cursor: pointer;
+    opacity: 0;
+}
+.b_logo_box>ul>li>a{
+    display: block;
+}
+.b_logo_box>ul{
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    padding:0 5px;
+}
 .yp_lb_box li.active{
     background: #C40000;
 }
@@ -1171,7 +1286,7 @@ body{color: #666;}
     opacity: 1;
 }
 .xiannv .hhlunbo.active{opacity: 1;z-index: 2}
-
+.firstul,.secondul{overflow: hidden;}
 
 
 .yp_lb_box.active{
@@ -2034,15 +2149,18 @@ body{color: #666;}
 }
 .b_logo li{
     justify-content: space-between;
-    width: 98px;height: 20px;
+    width: 98px;height: 26px;
     border-right: 1px solid #DEDFE0;text-align: center;
-    margin-top: 8px;
 }
 .b_logo li>a{
     width: 97px;height: 20px;
 }
 .b_logo li>a>img{
-    width: 75px;height:22px;
+    width: 70px;height:26px;
+}
+.b_logo_box li>a>img {
+    width: 70px;
+    height: 26px;
 }
 .jdg{
     background: #8C6DA0;
@@ -2320,10 +2438,15 @@ body{color: #666;}
     padding: 10px;
     text-align: left;
 }
+.more_info {
+    padding: 10px;
+    text-align: left;
+    font-size: 10px;
+}
 .more_info_name {
     overflow: hidden;
     margin-bottom: 5px;
-    height: 36px;
+    height: 34px;
     width: 99%;font-size: 10px;
 }
 .more_info_price {
@@ -2541,7 +2664,7 @@ body{color: #666;}
 
   @keyframes leftOut{ /* 移走 */
             0%{left:0;}
-            100%{left:-570px;}
+            100%{left:-590px;}
         }
         .leftOut{
             animation: leftOut 1s ease-in;/* 加速 */
@@ -2549,7 +2672,7 @@ body{color: #666;}
 
         /* 进入 */
         @keyframes leftIn{
-            0%{left:570px;}
+            0%{left:590px;}
             100%{left:0px;}
         }
         .leftIn{
@@ -2558,14 +2681,14 @@ body{color: #666;}
 
         @keyframes rightOut{
             0%{left:0px;}
-            100%{left:570px;}
+            100%{left:590px;}
         }
         .rightOut{
             animation:rightOut 1s ease-in ;
         }
 
         @keyframes rightIn{
-            0%{left:-570px;}
+            0%{left:-590px;}
             100%{left:0px;}
         }
         .rightIn{
@@ -2577,9 +2700,10 @@ body{color: #666;}
             border-right: 0;
         }
 
-        li{
-            float: left;
-        }
+        /*li{*/
+            /*width: 16%;*/
+            /*float: left;*/
+        /*}*/
         ul.b_logo{
                 z-index: 25;
                 width: 590px;
@@ -2595,3 +2719,14 @@ body{color: #666;}
 .live .bb_img:hover{
     transform: translate(-6px,0);
 }
+ul.fuwuul >li{
+    width:55%;float:left;
+    text-align:left;
+}
+ul.fuwuul >li>a{
+    width:100%;
+    text-align:left;
+}
+/*ul.fuwuul >li:last-child{*/
+    /*width: 25%;*/
+/*}*/

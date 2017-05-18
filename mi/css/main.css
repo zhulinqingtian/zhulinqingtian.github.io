@@ -102,7 +102,8 @@
 	/* height: 0; */
 	position: absolute;
 	top:100px;left: 0;
-
+	transition: all 1s;
+	overflow: hidden;
 
 }
 placeholder{
@@ -175,15 +176,20 @@ placeholder{
 	line-height: 100%;
 	float: left;
 	outline: none;
+	padding-left: 50px;
+	text-align: right;
+}
+.right input-placeholder{
+	background:orangered;
 }
 .dh .search{
 	line-height: 100%;
 	float: right;
 	height: 49px;
 	width: 49px;
-	border-right: 2px solid #BEBEBE;
-	border-bottom: 2px solid #BEBEBE;
-	background-image: url('../images/content2/fdj1_03.jpg');
+	border-right: 1px solid #BEBEBE;
+	border-bottom: 1px solid #BEBEBE;
+	background-image: url(../images/content2/fdj1_03.jpg);
 	background-size: 52px;
 	background-repeat: no-repeat;
 }
@@ -192,10 +198,11 @@ placeholder{
 	float: right;
 	height: 49px;
 	width: 49px;
-	
+	border-top: 1px solid #BEBEBE;
 	background-size: 52px;
 	background-repeat: no-repeat;
-	background-image: url('../images/00.png');
+	background: url('../images/00.png')center  orangered;
+
 }
 .banner{
 	height: 460px;
@@ -236,7 +243,7 @@ placeholder{
 	border:2px solid rgba(255,255,255, 0.3);
 	border-radius: 50%;
 	cursor: pointer;
-	transition: all 2s;
+	transition: all 1s;
 	justify-content: space-between;
 	margin-right: 15px;
 }
@@ -1142,7 +1149,8 @@ aside ul li a:hover{
 
 }
 .video .pic:hover{
-	transform: translate(-3px,-3px);
+	transform: translate(0,-5px);
+	box-shadow: 1px 3px 20px 5px rgba(0,0,0,0.1);
 }
 
 .video .pic:hover .pl{
@@ -1468,4 +1476,8 @@ aside ul li a:hover{
 	/* transition: all 1s linear; */
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
 	transform: translateY(-2px);
+}
+
+.s2-content-left .one .bt2{
+	font-size: 10px;
 }

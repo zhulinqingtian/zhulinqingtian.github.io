@@ -8,14 +8,15 @@
   <link rel="stylesheet" href="css/iconfont.css">
   <link rel="stylesheet" href="content.css">
   <script src="js/index.js"></script>
+    <script src="js/hover.js"></script>
   <script>
     window.onload=function(){
       var bannerbox=document.querySelector(".banner");
-      var pictures=document.querySelectorAll(".banner img");//轮播图
-      var btns=document.querySelectorAll(".lunbodian_box li");//轮播点
+      var pictures=document.querySelectorAll(".banner>img");//轮播图
+      var btns=document.querySelectorAll(".lunbodian_box>li");//轮播点
 
-      var pre=document.querySelector(".pre");
-      var next=document.querySelector(".next");//轮播箭头
+      var gxqpre=document.querySelector(".pre");
+      var gxqnext=document.querySelector(".next");//轮播箭头
       var bannernum=0;
       
      btns.forEach(function(ele,index){
@@ -35,7 +36,7 @@
 
      //自动播放
       
-      function move(){
+      function movemi(){
           bannernum++;
           if(bannernum==btns.length){
               bannernum=0;
@@ -51,23 +52,22 @@
           pictures[bannernum].style.opacity=1;
       }
 
-      var tt=setInterval(move,2000);
-      bannerbox.onmousemover=function(){
-          clearInterval(tt);
-      }
+        var ttmi=setInterval(movemi,2000);
+        hover(bannerbox,function(){
+            clearInterval(ttmi);
+        },function(){
+            ttmi=setInterval(movemi,2000);
+        })
 
-      bannerbox.onmouseout=function(){
-          tt=setInterval(move,2000);
-      }
 
-      pre.onclick=function(){
+      gxqpre.onclick=function(){
         if(bannernum==0){
             bannernum=btns.length;
           }
         bannernum-=2;
-        move();
+        movemi();
       }
-      next.onclick=function(){move();}
+      gxqnext.onclick=function(){movemi();}
 
     
    }
@@ -640,15 +640,15 @@
    <!-- 导航结束 -->
    <!-- banner开始 -->
   <div class="banner">
-      <div class="pre"><img src="images/jiantou_05.png" alt=""></div>
-      <div class="next"><img src="images/jiantou_03.png" alt=""></div>
+      <div class="pre"><img src="images/jiantou_05.png" alt="" style="cursor:pointer;"></div>
+      <div class="next"><img src="images/jiantou_03.png" alt="" style="cursor:pointer;"></div>
    	  <img src="images/banner1.jpg" alt="">
       <img src="images/banner2.jpg" alt="">
       <img src="images/banner3.jpg" alt="">
       <img src="images/banner4.jpg" alt="">
       <img src="images/bg.jpg" alt="">
       <ul class="lunbodian_box">
-        <li></li>
+        <li style="background: rgba(255, 255, 255, 0.5);"></li>
         <li></li>
         <li></li>
         <li></li>
@@ -2440,16 +2440,24 @@ function move_function(container, con, btn, pre ,next){
     console.log("vvvvvvv")
 
     Array.from(two_bts).forEach(function(li,index){
-      li.onmouseover=function(e){
-        two_cons[index].style.height="230px";
-        two_cons[index].style.zIndex+=25000;
-        e.stopPropagation();
-      }
-      li.onmouseout=function(e){
-        two_cons[index].style.height=0;
-        two_cons[index].style.zIndex-=25000;
-         e.stopPropagation();
-      }
+
+        hover(li,function(){
+            two_cons[index].style.height="230px";
+            two_cons[index].style.zIndex+=25000;
+        },function(){
+            two_cons[index].style.height=0;
+            two_cons[index].style.zIndex-=25000;
+        })
+//      li.onmouseover=function(e){
+//        two_cons[index].style.height="230px";
+//        two_cons[index].style.zIndex+=25000;
+//        e.stopPropagation();
+//      }
+//      li.onmouseout=function(e){
+//        two_cons[index].style.height=0;
+//        two_cons[index].style.zIndex-=25000;
+//         e.stopPropagation();
+//      }
     })
 </script>
 
@@ -2471,6 +2479,7 @@ function move_function(container, con, btn, pre ,next){
     })
 </script>
 
+<!--明星单品-->
 <script>
     var ul = document.querySelector(".danpinlist");
     var m = document.querySelector(".danpin");

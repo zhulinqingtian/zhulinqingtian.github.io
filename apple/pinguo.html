@@ -7,6 +7,98 @@
 	<link rel="stylesheet" href="css/pinguo.css">
 	<link rel="stylesheet" href="css/iconfont.css">
 </head>
+<script>
+	window.onload=function () {
+		var bm=document.querySelector(".banner");
+		var btn=document.querySelectorAll(".lbd li");
+		var img=document.querySelectorAll(".banner-box a");
+		var jt1=document.querySelector(".le-btn");
+		var jt2=document.querySelector(".rg-btn");
+		var z=5;
+		img[0].style.zIndex=z;
+		var  t= setInterval(move,3000);
+		var num=0;
+		var flag = true;
+		btn[0].classList.add("active");
+		function move() {
+			img[num].classList.add("leftOut");
+			btn[num].classList.remove("active");
+			num++;
+			if(num==img.length){
+				num=0;
+			}
+			btn[num].classList.add("active");
+			img[num].classList.add("leftIn");
+			img[num].style.zIndex=z++;
+
+		}
+		img.forEach(function (value) {
+			value.addEventListener("animationend", function() {
+				value.className = "";
+				flag=true;
+			});
+		});
+		bm.onmouseover=function () {
+			jt1.style.display="block";
+			jt2.style.display="block";
+			clearInterval(t);
+		}
+		bm.onmouseout=function () {
+			jt1.style.display="none";
+			jt2.style.display="none";
+			t= setInterval(move,3000);
+		}
+		Array.from(btn).forEach(function (value,index) {
+			value.onclick=function () {
+				if(index>num&&flag){
+					flag=false;
+					img[num].classList.add("leftOut");//之前的飞出
+					btn[num].classList.remove("active");
+					btn[index].classList.add("active");//当前的飞入
+					img[index].classList.add("leftIn");
+					num=index;
+					img[index].style.zIndex=z++;
+				}
+				else if(index<num&&flag)
+				{    flag=false;
+					img[num].classList.add("rightOut");//之前的飞出
+					btn[num].classList.remove("active");
+					btn[index].classList.add("active");//当前的飞入
+					img[index].classList.add("rightIn");
+					num=index;
+					img[index].style.zIndex=z++;
+				}
+				else{
+					return;
+				}
+			}
+		});
+		//箭头动效
+		jt1.onclick=function () {
+			if(flag){
+				flag=false;
+				move();
+			}
+
+		}
+		jt2.onclick=function () {
+			if(flag){
+				flag=false;
+				img[num].classList.add("rightOut");//之前的飞出
+				btn[num].classList.remove("active");
+				num--;
+				if(num==-1) {
+					num= img.length - 1;
+				}
+				btn[num].classList.add("active");//当前的飞入
+				img[num].classList.add("rightIn");
+				img[num].style.zIndex=z++;
+			}
+
+		}
+	}
+
+</script>
 <body >
 <!-- <div class="box"></div> -->
 <header>
@@ -19,7 +111,6 @@
 	<!-- 大屏 -->
 		<main>
 		<ul class="max-nav">
-
 			<li class="iconfont icon-pingguo"></li>
 			<li>Mac</li>
 			<li>ipad</li>
@@ -39,54 +130,33 @@
 		</main>
 	</nav>
 </header>
-
 <!-- banner -->
 <div class="banner">
+	<div class="s le-btn"><</div>
+	<div class="s rg-btn">></div>
+	<!--轮播点-->
+	<ul class="lbd">
+		<li class="mq"></li>
+		<li class="mq"></li>
+		<li class="mq"></li>
+	</ul>
 <!--图片 -->
-<div  class="banner-box1"><a href=""></a></div>
-<div class="banner-box">
-	
-	<div class="inner" style="height: 140px">
-		<h1 class="typography-product-reduced centeralign">iPhone 7，</h1>
-		<h2 class="typography-tagline-elevated centeralign" style="text-align: center">现更以红色呈现。</h2>
+	<div class="banner-box">
+		<a href="" style="background:#F2F2F2;">
+			<p>ipad</p>
+			<p>方寸间，乐趣全开</p>
+			<img src="Images/macbookpro_large.jpg" alt=""  style="width:45%;">
+		</a>
+		<a href="">
+			<p style="font-size:30px">WATCH</p>
+			<p>每一天，都可以更美好</p>
+			<img src="Images/ipad_large.jpg" alt=""></a>
+		<a href="" style="background:#CC3341;color: #fff">
+			<p>iphone7</p>
+			<p>现在更以红色呈现</p>
+			<img src="Images/iphone7_productred_large.png" alt="" style="width:60%;margin-bottom:0px; ">
+		</a>
 	</div>
-	<a href="" style="display: block;">
-		<img src="Images/macbookpro_large.jpg" alt="">
-		<img src="Images/banner1.png" alt="">
-		<img src="Images/banner2.png" alt="">
-		<!-- <nav class="dashnav dot-nav">
-			<ul class="tablist">
-				<li class="presentation">
-					<div href="" class="dashnav-item current">
-						<div class="dashnav-dash">
-							<span class="dashnav-progress" style="transform: scaleX(1);"></span>
-						</div>
-					</div>
-				</li>
-				<li class="presentation">
-					<a href="" class="dashnav-item current">
-						<div class="dashnav-dash">
-							<span class="dashnav-progress" style="transform: scaleX(1);"></span>
-						</div>
-					</a>
-				</li>
-				<li class="presentation">
-					<a href="" class="dashnav-item current">
-						<div class="dashnav-dash">
-							<span class="dashnav-progress" style="transform: scaleX(1);"></span>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</nav> -->
-	</a>
-</div>
-   <div class="left-btn">
-	<div class="btn"> < </div>
-</div>
-<div class="right-btn">
-	<div class="btn"> > </div>
-</div>
 </div>
 <!-- banner结束 -->
 <!-- 大屏图片 -->
@@ -95,7 +165,7 @@
 	<div class="p1"><a href=""></a></div>
 	<div class="p2"><a href=""></a></div>
 	<div class="p3"><a href=""></a></div>
-	<div class="p4"><a href=""></a></div>
+	<div class="p4"><a href="" style="background: "></a></div>
 </div>
 <!-- 图片结束 -->
 <!-- 中屏 -->
@@ -187,12 +257,10 @@
 </ul>
 </div>
 <div class="text">
-	<p>更多选购方式：前往 <a href="" style="color: blue">Apple Store</a> 零售店，致电 400-666-8800 或查找在你附近的<a href="" style="color: blue">授权经销商</a>。</p>
+<p>更多选购方式：前往 Apple Store 零售店，致电 400-666-8800 或查找在你附近的授权经销商。</p>
 </div>
-<div class="text" >
-	<ul>
-		<li style="padding-right:20px; ">
-			Copyright © 2017 Apple Inc. 保留所有权利。</li>	
+<div class="text"><ul><li style="padding-right:20px; ">
+	Copyright © 2017 Apple Inc. 保留所有权利。</li>	
 		<li>隐私政策</li>
 		 <li>|</li>
 		<li>使用条款</li>
@@ -209,13 +277,13 @@
 </div>
 </main>
 </footer>
-<!-- 底部小屏 -->
-<footer class="min-footer" >
+<!-- <!-- 底部小屏 -->
+<footer class="min-footer">
 	<main>
 	<div class="text">
 <p>双镜头摄像头仅于 iPhone 7 Plus 提供。亮黑色外观仅于 128GB 及以上存储容量的机型提供。</p>
 </div>
-<ul class="footer2 b_color">
+<ul class="footer2">
 	<li>
 	<span><b>选购及了解</b></span>
 	 <span class="right"><b>+</b></span>
@@ -240,15 +308,14 @@
 	</li>
 </ul>
 	<div class="text4">
-		<p>更多选购方式：前往<a href="" style="color: blue"> Apple Store</a> 零售店，致电 400-666-8800 或查找在你附近的<a href="" style="color: blue">授权经销商</a>。</p>
+<p>更多选购方式：前往 Apple Store 零售店，致电 400-666-8800 或查找在你附近的授权经销商。</p>
 </div>
 <div class="tu text4">
 <img src="Images/16.png" alt="" style="padding-right: 5px  style="float: left;"">  中国
 </div>
 <p class="text4">
 	Copyright © 2017 Apple Inc. 保留所有权利。</p>	
-<div class="text" >
-	<ul>	
+<div class="text"><ul>	
 		<li>隐私政策</li>
 		 <li>|</li>
 		<li>使用条款</li>
