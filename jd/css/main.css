@@ -1487,21 +1487,22 @@ html,body{
 .lq_list>li a img {
     overflow: hidden;
     position: absolute;
-    left: 50px;
-	top: 25px;
+    left: -40px;
+    top: 25px;
     width: 140px;
     height: 140px;
 }
 .lq_above {
     position: absolute;
     z-index: 1;
-    left: 15px;
+    /* left: 15px; */
     top: 15px;
     width: 100px;
     height: 180px;
     border-top: 3px solid #e93524;
     background-color: #fff;
-    background: url('../img/lq.png')  center center no-repeat;padding-left: 3px;
+    background: url(../img/lq.png) center center no-repeat;
+    padding-left: 3px;
 }
 .lq_above>.price {
 	position: absolute;
