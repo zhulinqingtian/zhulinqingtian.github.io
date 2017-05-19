@@ -26,10 +26,13 @@
 			})
 
 			//右侧固定
+
 			var fix_right=document.querySelectorAll("ul.right_bar li");
 			var fix_right_tan=document.querySelectorAll(".icon_des");
 
 			Array.from(fix_right).forEach(function(li,index){
+
+
 				li.onmouseover=function(){
 					fix_right_tan[index].style.display="block";
 					fix_right_tan[index].classList.remove("go");
@@ -74,7 +77,7 @@
 	<ul class="right_bar">
 		<li>
 			<a href="">
-				<div class="icon iconfont gerenzhongxin">&#xe653;
+				<div class="icon iconfont gerenzhongxin" >&#xe653;
 					<div class="icon_des">京东会员</div>
 				</div>
 			</a>
@@ -116,7 +119,7 @@
 		</li>
 		<li>
 			<a href="">
-				<div class="icon iconfont fanhui2">&#xe626;
+				<div class="icon iconfont fanhui2" >&#xe626;
 					<div class="icon_des">返回顶部</div>
 				</div>
 			</a>
