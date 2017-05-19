@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/shange.css">
     <link rel="stylesheet" href="css/media.css">
     <script src="js/JQuery.js"></script>
+    <script src="js/hover.js"></script>
     <style>
 
     </style>  
@@ -43,15 +44,48 @@
                 <div class="col-sm-12 col-xs-12 col-lg-12 ">
                   <img src="images/hbb.png" alt=""  class="dh_img">
                   <ul class="daohang">
-                    <li>沙发网</li>
-                    <li>应用市场</li>
-                    <li>客户端下载</li>
-                    <li>安装教程</li>
-                    <li>产品库</li>
+                    <li >沙发网</li>
+                    <li class="has">应用市场
+                        <ul class="xiala">
+                            <li>影视直播</li>
+                            <li>电视直播</li>
+                            <li>软件应用</li>
+                            <li>电视游戏</li>
+                            <li>最热</li>
+                            <li>专题</li>
+                        </ul>
+                    </li>
+                    <li class="has">客户端下载
+                        <ul class="xiala">
+                            <li>沙发管家</li>
+                            <li>沙发桌面</li>
+                            <li>沙发电视精灵</li>
+                        </ul>
+                    </li>
+                    <li >安装教程</li>
+                    <li class="has">产品库
+                        <ul class="xiala">
+                            <li>智能电视</li>
+                            <li>电视盒子</li>
+                            <li>投影仪</li>
+                        </ul>
+                    </li>
                     <li>论坛</li>
-                    <li>资讯</li>
-                    <li>菜鸟学堂</li>
-                    <li>开发者平台</li>
+                    <li class="has">资讯
+                        <ul class="xiala" style="width: 140%">
+                            <li>智能电视</li>
+                            <li>电视盒子精灵</li>
+                            <li>新闻资讯</li>
+                            <li>玩机攻略</li>
+                            <li>智能电视</li>
+                            <li>应用心得</li>
+                            <li>智能硬件</li>
+                            <li>家电测评</li>
+                            <li>VR虚拟现实</li>
+                        </ul>
+                    </li>
+                    <li style="font-size: 12px;line-height: 40px;">菜鸟学堂</li>
+                    <li style="font-size: 12px;line-height: 40px;">开发者平台</li>
                   </ul>
               </div>
             </div>  
@@ -1268,24 +1302,6 @@
     })
 
 
-//    var hot_li=document.querySelectorAll(".devices-rank-list li");
-//    var hot_con=document.querySelectorAll(".devices-rank-list li  .rank-item-content");
-//
-//
-//    Array.from(hot_li).forEach(function(ele,index){
-//      if($(".rank-item-content.active").length==0){
-//          hot_con[0].classList.add("active");
-//      }
-//      ele.onmouseover=function(){
-//        hot_con[index].style.display="block";
-//        hot_con[index].classList.add("active")
-//      }
-//      ele.onmouseout=function(){
-//       hot_con[index].style.display="none";
-//        hot_con[index].classList.remove("active")
-//      }
-//    })
-
     var title = document.querySelectorAll(".devices-rank-list li");
     var content = document.querySelectorAll(".devices-rank-list li  .rank-item-content");
     var c = content[0];
@@ -1316,5 +1332,17 @@
       b_pic[picnum].style.zIndex="10"
     }
     setInterval(b_picmove,3000)
+</script>
+<script>
+    var has=document.querySelectorAll(".has");
+    var has_ul=document.querySelectorAll(".has ul");
+
+    Array.from(has).forEach(function(ele,index){
+        hover(ele,function(){
+            has_ul[index].style.display="block";
+        },function(){
+            has_ul[index].style.display="none";
+        })
+    })
 </script>
 </html>

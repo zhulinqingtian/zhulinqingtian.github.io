@@ -26,6 +26,9 @@ nav .index{width: 100px;height: 30px;background: blue;float: left;}
     float: left;
     /* margin-left: 25px; */
 }
+.lists li:nth-child(9){
+	border-right: 0;
+}
 .second{width: 110px;height: 0;background: #fff;
 	position: absolute;left:0;right:0;top:30px;
 	overflow: hidden;z-index: 999;transition: all 0.5s}

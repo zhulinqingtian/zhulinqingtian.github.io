@@ -69,10 +69,14 @@
     text-align: justify;
 
  }
- .daohang li:nth-child(1){
+.daohang >li:hover{
     background: #000;
-    padding: 0 2%;
     color: #FF9933;
+}
+ .daohang >li:nth-child(1){
+     background: #000;
+     padding: 0 2%;
+     color: #FF9933;
  }
  .daohang:after{
     content: "";
@@ -80,12 +84,33 @@
     width: 100%;
     display: inline-block;
  }
- .daohang li{
+ .daohang >li{
     display: inline-block;
     line-height: 50px;
     width: auto;
     text-align: center;
+     padding:0 15px;
+     position: relative;
+     z-index: 100;
  }
+
+.daohang li .xiala{
+    position: absolute;
+    top:50px;
+    left:0;
+    background: #EBEBEB;
+    width: 100%;
+    height:auto;
+    border:1px solid #d2d1d1;
+    z-index: 10;
+    display: none;
+}
+.daohang li .xiala>li{
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    color: #333;
+}
  .dh_img{
     width: 40px;height: 40px;
     float: left;
