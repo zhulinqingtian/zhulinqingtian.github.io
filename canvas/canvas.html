@@ -168,7 +168,7 @@
 	}
 
 	clear.onclick=function(){
-		cobj.clearRect(0,0,500,500);
+		cobj.clearRect(0,0,1000,600);
 		data=[];
 	}
 	canvas.onmousedown=function(e){
@@ -188,7 +188,7 @@
 			var my=e.offsetY;
 
 			if(s!="eraser"){
-				cobj.clearRect(0,0,500,500);
+				cobj.clearRect(0,0,1000,600);
 				if(data.length!=0){
 
 					cobj.putImageData(data[data.length-1],0,0);
@@ -200,7 +200,7 @@
 		}
 		
 		document.onmouseup=function(){
-			data.push(cobj.getImageData(0,0,500,500));
+			data.push(cobj.getImageData(0,0,1000,600));
 			document.onmousemove=null;
 			document.onmouseup=null;
 		}
