@@ -1268,32 +1268,35 @@
     })
 
 
-    var hot_li=document.querySelectorAll(".devices-rank-list li");
-    var hot_con=document.querySelectorAll(".devices-rank-list li  .rank-item-content");
+//    var hot_li=document.querySelectorAll(".devices-rank-list li");
+//    var hot_con=document.querySelectorAll(".devices-rank-list li  .rank-item-content");
+//
+//
+//    Array.from(hot_li).forEach(function(ele,index){
+//      if($(".rank-item-content.active").length==0){
+//          hot_con[0].classList.add("active");
+//      }
+//      ele.onmouseover=function(){
+//        hot_con[index].style.display="block";
+//        hot_con[index].classList.add("active")
+//      }
+//      ele.onmouseout=function(){
+//       hot_con[index].style.display="none";
+//        hot_con[index].classList.remove("active")
+//      }
+//    })
 
-    // $(hot_li).each(function(index,ele){
-
-    //   $(this).mouseover(function(event) {
-    //     $(hot_con).eq(index).slideToggle();
-    //   });
-    //    $(this).mouseout(function(event) {
-    //      $(hot_con).eq(index).slideToggle();
-    //   });
-    // })
-    Array.from(hot_li).forEach(function(ele,index){
-      if($(".rank-item-content.active").length==0){
-          hot_con[0].classList.add("active");
-      }
-      ele.onmouseover=function(){
-        hot_con[index].style.display="block";
-        hot_con[index].classList.add("active")
-      }
-      ele.onmouseout=function(){
-       hot_con[index].style.display="none";
-        hot_con[index].classList.remove("active")
-      }
-    })
-
+    var title = document.querySelectorAll(".devices-rank-list li");
+    var content = document.querySelectorAll(".devices-rank-list li  .rank-item-content");
+    var c = content[0];
+    Array.from(title).forEach(function (v, i) {
+        c.style.display = "block";
+        v.onmouseover = function () {
+            c.style.display = "none";
+            content[i].style.display = "block";
+            c = content[i];
+        }
+    });
 </script>
 
 <script>
