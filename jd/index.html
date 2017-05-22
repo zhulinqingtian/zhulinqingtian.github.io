@@ -7629,7 +7629,7 @@
 
 				var index=$(this).index(".yp_lb_box li");
 
-				$("xiannv .hhlunbo").filter(".active").removeClass('active').end().eq(index).addClass('active')
+				$(".xiannv .hhlunbo").filter(".active").removeClass('active').end().eq(index).addClass('active')
 				hbtns.filter(".active").removeClass('active').end().eq(index).addClass('active')
 
 				hnum=index;
@@ -7651,8 +7651,9 @@
 
 			}
 
+			var contain=document.querySelector(".hh3");
 			var ht=setInterval(hao,2000);
-			$(".container").hover(function(){
+			hover(contain,function(){
 				clearInterval(ht)
 			},function(){
 				ht=setInterval(hao,2000);
@@ -7669,7 +7670,7 @@
 </script>
 
 
-<!-- // 秒杀 -->
+<!--  秒杀 -->
 <script>
 		var ul = document.querySelector(".pro_list");
         var m = document.querySelector(".miaosha .content .left");
