@@ -55,7 +55,6 @@
 
 </body>
 <script>
-    //开始界面动画
     var k = 0;
     var ks = document.querySelector(".start");
     var ms = document.querySelector(".music");
@@ -73,23 +72,23 @@
     setInterval(function () {
         ms.style.transform = "rotate(" + (k += 5) + "deg)";
     }, 40);
-    //开始游戏
+
     var control = true;
     var score = document.querySelector(".score");
     var score1 = document.querySelector(".score1");
-    //得分
+
     var state = document.querySelector(".state");
-    //关卡
+
     var live = document.querySelector(".live");
-    //生命值
+
     var start = document.querySelector(".img3");
 
     var lifeinner = document.querySelector(".lifeinner");
     var maxscore= document.querySelector(".maxscore");
-    //排行榜
+
     var rank=document.querySelector(".rankbtn");
     var list =document.querySelector(".rank");
-    function getData() {//获取数据
+    function getData() {
         return  localStorage.bestScore?JSON.parse(localStorage.bestScore):[];
     }
     function ranks() {
@@ -102,7 +101,7 @@
         val.forEach(function (v,i) {
             var player=v.player;
             var score=v.score;
-            list.innerHTML+="<p>"+"姓名："+player+" "+"得分:"+score+"</p>";
+            list.innerHTML+="<p>"+"玩家："+player+" "+"得分:"+score+"</p>";
 
         });
     }
@@ -128,13 +127,13 @@
             this.num = 3;
             this.obj = {};
             this.scoreele = score;
-            this.score = 0;			//用于保存score
+            this.score = 0;
             this.stateele = state;
             this.state = 1;
             this.speed = 5;
             this.liveele = live;
             this.live = 5;
-            this.head = window.innerHeight;//获取屏幕高度
+            this.head = window.innerHeight;
             this.widths = window.innerWidth - 130;
             this.startcontrol = true;
             this.st = null;
@@ -193,10 +192,10 @@
                     this.obj[i].ele.style.top = t + "px";
                     if (t > this.head) {
                         this.live--;
-//                        this.liveele.innerHTML = this.live;
+//
                         var zhi = this.live * 20 + "%";
                         lifeinner.style.backgroundSize = zhi + "100%";
-                        //删掉字母
+
                         this.main.removeChild(this.obj[i].ele);
 
                         delete this.obj[i];
@@ -204,14 +203,13 @@
                         this._createLetter()
 
                         if (this.live == 0) {
-                            //终止setInterval
                             this._gameover();
                             return;
                         }
                     }
                 }
             }.bind(this), 50)
-            //setInterval中的this指的是window对象，用bind(this)改变指针指向
+
         }
 
         _keydown() {
@@ -226,7 +224,6 @@
                     this.score++;
                     this.scoreele.innerHTML=this.score;
                     score1.innerHTML=this.score;
-                    console.log( this.scoreele,this.score)
                     if (this.score % 10 == 0) {
                         this._upstate()
 
@@ -263,8 +260,8 @@
                 })
                 localStorage.bestScore = JSON.stringify(this.bestScore);
             } else {
-                if (this.score > this.bestScore[2].score) {  //分数大于第三个插入、删除最后一个
-                    var player = prompt("请输入姓名");
+                if (this.score > this.bestScore[2].score) {
+                    var player = prompt("请输入姓名：");
                     this.bestScore.push({player, score: this.score});
                     this.bestScore.sort(function (a, b) {
                         if (a.score > b.score) {
@@ -282,7 +279,7 @@
             var over= document.querySelector(".gameover");
             var val=getData();
             maxscore.innerHTML=val[0].score;
-            lifeinner.style.backgroundSize = "100% 100%";
+            lifeinner.style.backgroundSize = "100%";
             over.style.display="block";
             this.main.innerHTML = "";
             this.obj = {};
@@ -290,9 +287,8 @@
             this.state = 1;
             this.speed = 5;
             this.live = 5;
-//            this.liveele.innerHtml = 5;
             score1.innerHTML=0;
-            this.stateele.innerHTML ="关卡"+1;
+            this.stateele.innerHTML ="关卡"+(this.state);
             this.startcontrol = false;
             this.startcontrol=true;
             this.st = null;
@@ -308,9 +304,14 @@
             this._keydown()
         }
     }
+
     var main = document.querySelector(".main");
     var pausebtn = document.querySelector(".pause");
     var game = new Game(main, score, state, live);
+    var flag = true;
+    var over= document.querySelector(".gameover");
+    var restart = document.querySelector(".restart");
+    var quit= document.querySelector(".quit");
 
     start.onclick = function () {
         kg.style.display = "none";
@@ -320,7 +321,7 @@
         }
         game.startcontrol= !game.startcontrol;
     }
-    var flag = true;
+
     pausebtn.onclick = function () {
         if (flag) {
             pausebtn.style.background="url(img/continue1.png)"+" "+ "no-repeat"+" "+"center";
@@ -331,9 +332,8 @@
         }
         flag = !flag;
     }
-    //重新开始
-    var over= document.querySelector(".gameover");
-    var restart = document.querySelector(".restart");
+
+
     restart.onclick=function () {
         over.style.display="none";
         if (game.startcontrol) {
@@ -341,8 +341,7 @@
         }
         game.startcontrol= !game.startcontrol;
     }
-    //返回主界面
-    var quit= document.querySelector(".quit");
+
     quit.onclick=function () {
         kg.style.display = "block";
         over.style.display="none";
